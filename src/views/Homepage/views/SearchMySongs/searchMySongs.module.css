@@ -1,0 +1,21 @@
+.mainContent {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  grid-template-rows: 100px 1fr;
+}
+
+/*      
+grid-area settings:
+  grid-row-start 
+  grid-column-start
+  grid-row-end
+  grid-column-end
+*/
+.searchResultsContainer {
+  /*grid-area: 1 / 1 / 3 / 2;*/
+  grid-area: 1 / 1 / 3 / 1;
+}
+
+.filtersAside {
+  grid-area: 1 / 2 / 3 / 3;
+}

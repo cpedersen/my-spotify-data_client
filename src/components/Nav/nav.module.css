@@ -1,0 +1,48 @@
+.navContainer {
+  display: flex;
+  flex-wrap: wrap;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  justify-content: space-between;
+  align-content: right;
+  padding: 3%;
+  background-color: #aaa;
+}
+/*
+.nav-items {
+}*/
+
+.navContainer {
+}
+
+/*
+nav,
+footer {
+  padding: 3%;
+  background-color: #aaa;
+}
+
+nav {
+}
+
+.nav2 {
+  position: static;
+  margin-bottom: 50px;
+}
+*/
+
+.about {
+  text-align: center;
+}
+/*
+.help {
+  text-align: right;
+}
+
+.go-back {
+  text-align: centers;
+}
+*/

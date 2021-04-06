@@ -1,0 +1,35 @@
+header {
+  padding: 5% 0;
+}
+
+section {
+  min-height: 200px;
+  padding: 6% 0;
+  background-color: #bbb;
+}
+
+section:nth-child(even) {
+  background-color: #ddd;
+}
+
+.title-main {
+  margin-top: 100px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+ul {
+  padding: 0;
+}
+
+li {
+  list-style: none;
+  text-align: center;
+  padding: 50px 30px;
+  font-size: 1.2em;
+  color: black;
+}
+
+li:nth-child(odd) {
+  background: #eee;
+}
