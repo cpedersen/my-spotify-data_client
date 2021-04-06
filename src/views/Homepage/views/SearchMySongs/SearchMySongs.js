@@ -4,13 +4,24 @@ import styles from "./searchMySongs.module.css";
 import Nav from "../../../../components/Nav/Nav";
 import { Filters } from "./components/Filters";
 import { SearchResults } from "./components/SearchResults";
-
+import {
+  Switch,
+  Route,
+  Link,
+  useRouteMatch,
+  useHistory,
+} from "react-router-dom";
+import Modal from "react-modal";
 function SearchMySongs(props) {
   const [searchBy, setSearchBy] = useState("text");
   const [query, setQuery] = useState("");
   const [results, setResults] = useState([]);
   const [filters, setFilters] = useState({});
-
+  const { path, url } = useRouteMatch();
+  const history = useHistory();
+  const closeHelp = () => {
+    history.push("/dashboard/search-songs");
+  };
   const onSearch = () => {
     // Perform api request to search
     // const results = searchApi.search()
@@ -32,6 +43,18 @@ function SearchMySongs(props) {
           <Filters filters={filters} setFilters={setFilters} />
         </aside>
       </main>
+      <Link to={`${url}/help`}>Search my songs help</Link>
+      <Switch>
+        <Route path={`${path}/help`}>
+          <Modal
+            isOpen={true}
+            onRequestClose={closeHelp}
+            style={{ overlay: { zIndex: 20 } }}
+          >
+            <div>search songs help</div>
+          </Modal>
+        </Route>
+      </Switch>
     </>
   );
 }

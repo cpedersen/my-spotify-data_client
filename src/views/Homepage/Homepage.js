@@ -1,6 +1,6 @@
 // import React, { Component } from "react";
 //import { Link } from "react-router-dom";
-import "./Homepage.css";
+import styles from "./Homepage.module.css";
 import Navigation from "../../components/Nav/Nav";
 import { NavLink, Switch, Route } from "react-router-dom";
 import { BackUpData } from "./views/BackUpData";
@@ -14,23 +14,43 @@ function Homepage(props) {
   return (
     <>
       <Navigation />
-      <main className="home">
+      <main>
         <header role="banner">
-          <h1 className="title-main">My Spotify Data</h1>
+          <h1 className={styles.title}>My Spotify Data</h1>
         </header>
-        <section className="container">
-          <nav className="list">
-            <NavLink to={`${path}/backup-data`}>Back Up Data</NavLink>
-            <NavLink to={`${path}/search-playlists`}>
+        <section>
+          <nav className={styles.list}>
+            <NavLink
+              to={`${path}/search-playlists`}
+              className={styles.navLink}
+              activeClassName={styles.activeTab}
+            >
               Search My Playlists
             </NavLink>
-            <NavLink to={`${path}/search-songs`}>Search My Songs</NavLink>
-            <NavLink to={`${path}/view-listening-history`}>
+            <NavLink
+              to={`${path}/search-songs`}
+              className={styles.navLink}
+              activeClassName={styles.activeTab}
+            >
+              Search My Songs
+            </NavLink>
+            <NavLink
+              to={`${path}/view-listening-history`}
+              className={styles.navLink}
+              activeClassName={styles.activeTab}
+            >
               View Listening History
+            </NavLink>
+            <NavLink
+              to={`${path}/back-up-data`}
+              className={styles.navLink}
+              activeClassName={styles.activeTab}
+            >
+              Back Up Data
             </NavLink>
           </nav>
           <Switch>
-            <Route path={`${path}/backup-data`}>
+            <Route path={`${path}/back-up-data`}>
               <BackUpData />
             </Route>
             <Route path={`${path}/search-playlists`}>

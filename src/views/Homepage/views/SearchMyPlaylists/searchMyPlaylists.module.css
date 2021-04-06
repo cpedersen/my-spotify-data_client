@@ -1,16 +1,25 @@
 .mainContent {
-  display: grid;
+  /*display: grid;
   grid-template-columns: 1fr 300px;
-  grid-template-rows: 100px 1fr;
+  grid-template-rows: 100px 1fr;*/
 }
 
 .searchFieldsContainer {
   grid-area: 1 / 1 / 2 / 2;
   /*
+  grid-area is a shorthand for grid-column and grid-row
+  grid-area: row-start / column-start / row-end / column-end
 
   grid-column: 1 / 2;
   grid-row: 1 / 2;
 
+  grid-column is a shorthand for grid-column-start and grid-column-end
+  grid-row is a shorthand for grid-row-start and grid-row-end
+
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 2;
   */
 }
 

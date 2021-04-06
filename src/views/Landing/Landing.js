@@ -1,8 +1,15 @@
-import { Link } from "react-router-dom";
+//import { Link } from "react-router-dom";
 import "./Landing.css";
 import Nav from "../../components/Nav/Nav";
+import { useHistory } from "react-router-dom";
 
 function Landing(props) {
+  const history = useHistory();
+
+  const onLogIn = () => {
+    history.push("/dashboard/search-playlists");
+  };
+
   return (
     <>
       <Nav />
@@ -33,7 +40,10 @@ function Landing(props) {
           </ul>
           <section className="login-block">
             <p>Log into Spotify to get started...</p>
-            <button aria-label="Login with Spotify credentials">
+            <button
+              onClick={onLogIn}
+              aria-label="Login with Spotify credentials"
+            >
               Go for it
             </button>
           </section>

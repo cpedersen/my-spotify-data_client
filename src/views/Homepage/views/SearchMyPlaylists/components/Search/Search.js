@@ -1,10 +1,28 @@
 import React from "react";
 
 const Search = (props) => {
+  const { query, onQueryChange, searchBy, setSearchBy, onSearch } = props;
   return (
     <section role="search-playlist">
       Search
-      <div className="field"></div>
+      <div className="field">
+        <input
+          type="text"
+          value={query}
+          onChange={(e) => onQueryChange(e.target.value)}
+        />
+      </div>
+      <div className="field">
+        <select value={searchBy} onChange={(e) => setSearchBy(e.target.value)}>
+          <option value="title">Search by title</option>
+          <option value="spotify-url">Search by Spotify URL</option>
+        </select>
+      </div>
+      <div className="">
+        <button type="submit" onClick={onSearch}>
+          Search
+        </button>
+      </div>
     </section>
   );
 };
