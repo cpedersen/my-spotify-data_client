@@ -24,7 +24,7 @@ function SearchMyPlaylists(props) {
     <>
       <Nav />
       <header role="banner">
-        <h1 class="title-sub">Search My Playlists</h1>
+        <h1 className="title-sub">Search My Playlists</h1>
       </header>
       <main className={styles.mainContent} role="search-playlists">
         <section className={styles.searchFieldsContainer}>

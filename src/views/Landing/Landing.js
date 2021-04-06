@@ -8,10 +8,10 @@ function Landing(props) {
       <Nav />
       <main role="login">
         <header role="banner">
-          <h1 class="title-main">My Spotify Data</h1>
+          <h1 className="title-main">My Spotify Data</h1>
         </header>
-        <section class="container">
-          <ul class="list">
+        <section className="container">
+          <ul className="list">
             <li>
               Afraid of losing song lists and listening history you spent hours
               developing?

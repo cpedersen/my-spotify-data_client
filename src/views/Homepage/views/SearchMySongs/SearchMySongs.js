@@ -22,7 +22,7 @@ function SearchMySongs(props) {
     <>
       <Nav />
       <header role="banner">
-        <h1 class="title-sub">Search My Songs</h1>
+        <h1 className="title-sub">Search My Songs</h1>
       </header>
       <main className={styles.mainContent} role="search-songs">
         <section className={styles.searchResultsContainer}>

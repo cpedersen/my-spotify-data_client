@@ -22,7 +22,7 @@ function ViewListeningHistory(props) {
     <>
       <Nav />
       <header role="banner">
-        <h1 class="title-sub">View Listening History</h1>
+        <h1 className="title-sub">View Listening History</h1>
       </header>
       <main className={styles.mainContent} role="view-listening-history">
         <section className={styles.searchResultsContainer}>

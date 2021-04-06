@@ -14,7 +14,7 @@ function Homepage(props) {
   return (
     <>
       <Navigation />
-      <main role="homepage" className="home">
+      <main className="home">
         <header role="banner">
           <h1 className="title-main">My Spotify Data</h1>
         </header>
@@ -45,7 +45,7 @@ function Homepage(props) {
           </Switch>
         </section>
       </main>
-      <footer role="content-info"></footer> 
+      <footer></footer> 
     </>
   );
 }
