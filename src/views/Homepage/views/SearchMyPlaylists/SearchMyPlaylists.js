@@ -1,6 +1,4 @@
 import { useState, useEffect } from "react";
-//import { useState, useEffect } from "react";
-//import { Link } from "react-router-dom";
 import styles from "./searchMyPlaylists.module.css";
 import Nav from "../../../../components/Nav/Nav";
 import { Filters } from "./components/Filters";
@@ -49,8 +47,9 @@ function SearchMyPlaylists(props) {
     <>
       <Nav />
       <header role="banner">
-        <h1 className="title-sub">Search My Playlists</h1>
+        <h1>Search My Playlists</h1>
       </header>
+
       <main>
         <form className={styles.mainContent} role="search-playlists">
           <section className={styles.searchFieldsContainer}>
@@ -67,6 +66,7 @@ function SearchMyPlaylists(props) {
           </section>
         </form>
       </main>
+
       <Link to={`${url}/help`}>Search my playlists help</Link>
       <Switch>
         <Route path={`${path}/help`}>
