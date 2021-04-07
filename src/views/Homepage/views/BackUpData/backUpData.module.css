@@ -18,8 +18,9 @@ section {
   color: black;
 }
 
-.button-section {
+.buttonSection {
   text-align: center;
+  background-color: transparent;
 }
 
 button {
@@ -28,6 +29,7 @@ button {
   color: black;
   /*padding: 15px 32px;*/
   padding: 6px 16px;
+  margin: 6px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -80,4 +82,17 @@ li:nth-child(odd) {
   background-color: #f5f5f5;
   text-align: left;
   margin-bottom: 0;
+}
+
+.helpLink {
+  display: flex;
+  justify-content: center;
+}
+
+.flex {
+  display: flex;
+}
+
+input {
+  margin-top: 8px;
 }

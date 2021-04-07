@@ -1,4 +1,18 @@
 .filterOption {
-  margin: 4px;
   padding: 4px;
+}
+
+.filterForm {
+  text-align: left;
+}
+
+.filterButton {
+}
+
+.buttonSection {
+  text-align: center;
+}
+
+.flex {
+  display: flex;
 }

@@ -1,82 +1,114 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./filters.module.css";
 
 const Filters = (props) => {
-  const { updateFilterForm, onSearch } = props;
+  const { updateFilterForm, resetFilterForm, onSearch, filters } = props;
+  /*const useSlider = (min, max, defaultState, label, id) => {
+    const [state, setSlide] = useState(defaultState);
+    const handleChange = (e) => {
+      console.log("setting level", e.target.value);
+      setSlide(e.target.value);
+    };
+
+    const props = {
+      type: "range",
+      id,
+      min,
+      max,
+      step: 0.5,
+      value: state,
+      onChange: handleChange,
+    };
+    return props;
+  };*/
   return (
     <form role="filter" className="search-criteria-form" onSubmit={onSearch}>
-      Acousticness
+      <label htmlFor="acousticness">Acousticness</label>
       <input
         type="range"
-        value="5"
+        defaultValue="5"
         min="0"
         max="10"
+        name="acousticness"
         id="acousticness"
+        step={0.5}
+        value={filters.acousticness}
         onChange={updateFilterForm}
         className={styles.filterOption}
       />
-      Danceability
+      <label htmlFor="acousticness">Danceability</label>
       <input
         type="range"
-        value="5"
+        value={filters.danceability}
         min="0"
         max="10"
-        id="Danceability"
+        name="danceability"
+        id="danceability"
         onChange={updateFilterForm}
         className={styles.filterOption}
       />
-      Duration_min
+      <label htmlFor="duration_min">Duration_min</label>
       <input
         type="range"
-        value="5"
+        value={filters.duration_min}
         min="0"
         max="10"
-        id="Duration_min"
+        name="duration_min"
+        id="duration_min"
         onChange={updateFilterForm}
         className={styles.filterOption}
       />
-      Energy
+      <label htmlFor="energy">Energy</label>
       <input
         type="range"
-        value="5"
+        value={filters.energy}
         min="0"
         max="10"
-        id="Energy"
+        name="energy"
+        id="energy"
         onChange={updateFilterForm}
         className={styles.filterOption}
       />
-      Explicit
+      <label htmlFor="explicit">Explicit</label>
       <input
         type="range"
-        value="5"
+        value={filters.explicit}
         min="0"
         max="10"
-        id="Explicit"
-        onChange={updateFilterForm}
+        name="explicit"
+        id="explicit"
+        onMousonChangeeonChangeUp={updateFilterForm}
         className={styles.filterOption}
       />
-      Instrumentalness
+      <label htmlFor="instrumentalness">Instrumentalness</label>
       <input
         type="range"
-        value="5"
+        value={filters.instrumentalness}
         min="0"
         max="10"
-        id="Instrumentalness"
+        name="instrumentalness"
+        id="instrumentalness"
         onChange={updateFilterForm}
         className={styles.filterOption}
       />
-      Liveness
+      <label htmlFor="liveness">Liveness</label>
       <input
         type="range"
-        value="5"
+        value={filters.liveness}
         min="0"
         max="10"
-        id="Liveness"
+        name="liveness"
+        id="liveness"
         onChange={updateFilterForm}
         className={styles.filterOption}
       />
-      <div className="">
-        <button type="submit">Search</button>
+      <div className="buttons">
+        <button className={styles.filterButton} type="submit">
+          Search
+        </button>
+        <button className={styles.filterButton} onClick={resetFilterForm}>
+          Reset
+        </button>
       </div>
     </form>
   );

@@ -7,7 +7,6 @@ import {
   useHistory,
 } from "react-router-dom";
 import Modal from "react-modal";
-
 import styles from "./backUpData.module.css";
 
 const BackUpData = (props) => {
@@ -46,47 +45,56 @@ const BackUpData = (props) => {
         <h1>Back Up Data</h1>
       </header>
       <form action="" onSubmit={onSubmit}>
-        <input
-          type="checkbox"
-          id="request-complete-download-input"
-          name="requestCompleteDownload"
-          onChange={onFieldChange}
-        />
-        <label htmlFor="request-complete-download-input">
-          Request a complete download of your data from Spotify (e.g.,
-          playlists, search queries, followers, streaming history).
-        </label>
+        <div className={styles.flex}>
+          <input
+            type="checkbox"
+            id="request-complete-download-input"
+            name="requestCompleteDownload"
+            onChange={onFieldChange}
+          />
+          <label htmlFor="request-complete-download-input">
+            Request a complete download of your data from Spotify (e.g.,
+            playlists, search queries, followers, streaming history).
+          </label>
+        </div>
         <br />
-        <input
-          type="checkbox"
-          id="download-playlists-and-listening-history-input"
-          name="downloadPlaylistsAndListeningHistory"
-          onChange={onFieldChange}
-        />
-        <label htmlFor="download-playlists-and-listening-history-input">
-          Download your playlists and listening history to the My Spotify Data
-          database.
-        </label>
+        <div className={styles.flex}>
+          <input
+            type="checkbox"
+            id="download-playlists-and-listening-history-input"
+            name="downloadPlaylistsAndListeningHistory"
+            onChange={onFieldChange}
+          />
+          <label htmlFor="download-playlists-and-listening-history-input">
+            Download your playlists and listening history to the My Spotify Data
+            database.
+          </label>
+        </div>
         <br />
-        <input
-          type="checkbox"
-          id="export-data-input"
-          name="exportData"
-          onChange={onFieldChange}
-        />
-        <label htmlFor="export-data-input">
-          Export your data from the My Spotify Data database.
-        </label>
+        <div className={styles.flex}>
+          <input
+            type="checkbox"
+            id="export-data-input"
+            name="exportData"
+            onChange={onFieldChange}
+          />
+          <label htmlFor="export-data-input">
+            Export your data from the My Spotify Data database.
+          </label>
+        </div>
+
         <br />
-        <section className="button-section">
-          <button className="submitButton" type="submit">
+        <section className={styles.buttonSection}>
+          <button className={styles.button} type="submit">
             Submit
           </button>
           <br />
           {/*<button className="resetButton">Reset</button>*/}
         </section>
       </form>
-      <Link to={`${url}/help`}>Back up data help</Link>
+      <Link to={`${url}/help`} className={styles.helpLink}>
+        Back up data help
+      </Link>
       <Switch>
         <Route path={`${path}/help`}>
           <Modal

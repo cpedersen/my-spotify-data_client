@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-/*import React from "react";*/
+import React from "react";
 import styles from "./searchMySongs.module.css";
 import Nav from "../../../../components/Nav/Nav";
 import { Filters } from "./components/Filters";
@@ -15,9 +15,22 @@ import Modal from "react-modal";
 import songsData from "../../../../fixtures/songs";
 
 function SearchMySongs(props) {
-  const [query, setQuery] = useState("");
   const [results, setResults] = useState([]);
-  const [filters, setFilters] = useState({});
+  /*const [filters, setFilters] = useState({
+    value: 5,
+    min: 0,
+    max: 10,
+  });*/
+  const defaultFilters = {
+    acousticness: 5,
+    danceability: 5,
+    duration_min: 5,
+    energy: 5,
+    explicit: 5,
+    instrumentalness: 5,
+    liveness: 5,
+  };
+  const [filters, setFilters] = useState(defaultFilters);
   const { path, url } = useRouteMatch();
   const history = useHistory();
   const closeHelp = () => {
@@ -26,24 +39,37 @@ function SearchMySongs(props) {
 
   const onSearch = (e) => {
     e.preventDefault();
-    console.log({
-      /*query,*/
-    });
+    console.log({});
     // Perform api request to search
     // const results = searchApi.search()
   };
 
   const updateFilterForm = (e) => {
-    e.preventDefault();
+    // e.preventDefault();
+    const { name, value } = e.target;
     console.log({
-      /*query,*/
+      name,
+      value,
+    });
+    setFilters({
+      ...filters,
+      [name]: value,
     });
     // Perform api request to search
     // const results = searchApi.search()
   };
 
-  const onQueryChange = (value) => {
-    setQuery(value);
+  const resetFilterForm = (event) => {
+    event.preventDefault(); /*
+    const { name, value } = e.target;
+    setFilters();
+    console.log({
+      name,
+      value,
+    });*/
+    // Perform api request to search
+    // const results = searchApi.search()
+    setFilters(defaultFilters);
   };
 
   useEffect(() => {
@@ -64,16 +90,18 @@ function SearchMySongs(props) {
           </section>
           <aside className={styles.filtersAside}>
             <Filters
-              query={query}
               filters={filters}
               updateFilterForm={updateFilterForm}
+              resetFilterForm={resetFilterForm}
               onSearch={onSearch}
             />
           </aside>
         </form>
       </main>
 
-      <Link to={`${url}/help`}>Search my songs help</Link>
+      <Link to={`${url}/help`} className={styles.helpLink}>
+        Search my songs help
+      </Link>
       <Switch>
         <Route path={`${path}/help`}>
           <Modal

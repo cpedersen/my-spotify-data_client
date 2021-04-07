@@ -2,17 +2,25 @@ import React from "react";
 import styles from "./filters.module.css";
 
 const Filters = (props) => {
+  const { onSubmit } = props;
   return (
-    <section role="filter">
-      <ul>
-        <li className={styles.filterOption}>
-          Option 1: View from Spotify (default on)
-        </li>
-        <li className={styles.filterOption}>
-          Option 2: View from My Spotify Data database (default off)
-        </li>
-      </ul>
-    </section>
+    <form className={styles.filterForm} role="filter" onSubmit={onSubmit}>
+      <div className={styles.flex}>
+        <input type="checkbox" id="view-spotify" />
+        <label htmlFor="view-spotify">View from Spotify (default on)</label>
+      </div>
+      <div className={styles.flex}>
+        <input type="checkbox" id="view-my-spotify" />
+        <label htmlFor="view-my-spotify">
+          View from My Spotify Data database (default off)
+        </label>
+      </div>
+      <div className={styles.buttonSection}>
+        <button className={styles.filterButton} type="submit">
+          Search
+        </button>
+      </div>
+    </form>
   );
 };
 
