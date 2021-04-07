@@ -1,3 +1,11 @@
 .field {
   background-color: white;
 }
+
+.inputField {
+  font-size: 16px;
+}
+
+.selectField {
+  font-size: 16px;
+}

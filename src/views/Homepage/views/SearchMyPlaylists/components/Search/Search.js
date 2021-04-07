@@ -1,4 +1,5 @@
 import React from "react";
+import styles from "./search.module.css";
 
 const Search = (props) => {
   const { query, onQueryChange, searchBy, setSearchBy, onSearch } = props;
@@ -9,12 +10,17 @@ const Search = (props) => {
         <input
           type="text"
           value={query}
+          className={styles.inputField}
           onChange={(e) => onQueryChange(e.target.value)}
         />
       </div>
       <div className="field">
-        <select value={searchBy} onChange={(e) => setSearchBy(e.target.value)}>
-          <option value="title">Search by title</option>
+        <select
+          className={styles.selectField}
+          value={searchBy}
+          onChange={(e) => setSearchBy(e.target.value)}
+        >
+          <option value="title">Search by song title</option>
           <option value="spotify-url">Search by Spotify URL</option>
         </select>
       </div>
