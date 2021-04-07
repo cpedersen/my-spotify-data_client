@@ -1,7 +1,7 @@
 //import { Link } from "react-router-dom";
-import "./Landing.css";
 import Nav from "../../components/Nav/Nav";
 import { useHistory } from "react-router-dom";
+import styles from "./landing.module.css";
 
 function Landing(props) {
   const history = useHistory();
@@ -20,15 +20,6 @@ function Landing(props) {
         <section className="container">
           <ul className="list">
             <li>
-              Afraid of losing song lists and listening history you spent hours
-              developing?
-              <p>Click 'Back Up Data'</p>
-            </li>
-            <li>
-              Want a way to view your song listening history?{" "}
-              <p>Click 'View Listening History'</p>
-            </li>
-            <li>
               Ever wonder if a particular song is in any of your playlists?
               <p>Click 'Search My Playlists'</p>
             </li>
@@ -37,12 +28,23 @@ function Landing(props) {
               (e.g., danceability, energy, loudness)?
               <p>Click 'Search My Songs'</p>
             </li>
+            <li>
+              Want a way to view your song listening history?{" "}
+              <p>Click 'View Listening History'</p>
+            </li>
+
+            <li>
+              Afraid of losing song lists and listening history you spent hours
+              developing?
+              <p>Click 'Back Up Data'</p>
+            </li>
           </ul>
           <section className="login-block">
             <p>Log into Spotify to get started...</p>
             <button
               onClick={onLogIn}
               aria-label="Login with Spotify credentials"
+              className={styles.buttonStyle}
             >
               Go for it
             </button>
