@@ -85,7 +85,7 @@ const BackUpData = (props) => {
 
         <br />
         <section className={styles.buttonSection}>
-          <button className={styles.button} type="submit">
+          <button className={styles.buttonStyle} type="submit">
             Submit
           </button>
           <br />
