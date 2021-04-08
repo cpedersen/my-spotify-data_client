@@ -12,15 +12,18 @@ import {
   useHistory,
 } from "react-router-dom";
 import Modal from "react-modal";
+import { withAsync } from "../../../../helpers";
 import songsData from "../../../../fixtures/songs";
-
+import { useUserContext } from "../../../../context/UserContext";
+import spotify from "../../../../services/spotify";
 function SearchMyPlaylists(props) {
   const [searchBy, setSearchBy] = useState("text");
   const [query, setQuery] = useState("");
-  const [results, setResults] = useState([]);
+  const [songs, setSongs] = useState([]);
   const [filters, setFilters] = useState({});
   const { path, url } = useRouteMatch();
   const history = useHistory();
+  const { user } = useUserContext();
   const closeHelp = () => {
     history.push("/dashboard/search-playlists");
   };
@@ -39,8 +42,56 @@ function SearchMyPlaylists(props) {
     setQuery(value);
   };
 
+  const fetchTracksForPlaylists = async (playlists) => {
+    const { response, error } = await withAsync(() =>
+      Promise.all(
+        playlists.map((playlist) =>
+          spotify.getPlaylist(playlist.id, {
+            limit: 500,
+          })
+        )
+      )
+    );
+    console.log({ response, error });
+    const tracks = response
+      .map(({ body }) => {
+        const { id: playlistId, name: playlistName, tracks } = body;
+        const { items } = tracks;
+        return items.map((item) => {
+          item.playlistName = playlistName;
+          item.playlistId = playlistId;
+          return item;
+        });
+      })
+      .flat();
+
+    console.log({ tracks });
+    setSongs(tracks);
+  };
+
+  const fetchUserPlaylists = async () => {
+    const { response, error } = await withAsync(() =>
+      spotify.getUserPlaylists(user.id)
+    );
+    console.log({ response, error });
+    const { items } = response.body;
+    fetchTracksForPlaylists(items);
+
+    /* if (items.length) {
+      setPlaylists(items);
+    } */
+
+    /*try {
+      console.log({ user });
+      const response = await spotify.getUserPlaylists(user.id);
+      console.log({ response });
+    } catch (error) {
+      console.error(error);
+    }*/
+  };
+
   useEffect(() => {
-    setResults(songsData.data);
+    fetchUserPlaylists();
   }, []);
 
   return (
@@ -48,6 +99,7 @@ function SearchMyPlaylists(props) {
       <Nav />
       <header role="banner">
         <h1>Search My Playlists</h1>
+        <p>{user.id}</p>
       </header>
 
       <main>
@@ -62,7 +114,7 @@ function SearchMyPlaylists(props) {
             />
           </section>
           <section className={styles.searchResultsContainer}>
-            <SearchResults results={results} />
+            <SearchResults results={songs} />
           </section>
         </form>
       </main>

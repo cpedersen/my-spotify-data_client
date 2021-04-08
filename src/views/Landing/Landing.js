@@ -7,7 +7,7 @@ function Landing(props) {
   const history = useHistory();
 
   const onLogIn = () => {
-    history.push("/dashboard/search-playlists");
+    // history.push("/dashboard/search-playlists");
   };
 
   return (
@@ -41,13 +41,13 @@ function Landing(props) {
           </ul>
           <section className="login-block">
             <p>Log into Spotify to get started...</p>
-            <button
-              onClick={onLogIn}
+            <a
+              href={`${process.env.REACT_APP_API_BASE_URL}/login`}
               aria-label="Login with Spotify credentials"
               className={styles.buttonStyle}
             >
               Go for it
-            </button>
+            </a>
           </section>
         </section>
       </main>
