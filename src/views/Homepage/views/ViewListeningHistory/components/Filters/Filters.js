@@ -7,13 +7,11 @@ const Filters = (props) => {
     <form className={styles.filterForm} role="filter" onSubmit={onSubmit}>
       <div className={styles.flex}>
         <input type="checkbox" id="view-spotify" />
-        <label htmlFor="view-spotify">View from Spotify (default on)</label>
+        <label htmlFor="view-spotify">View most recent (default on)</label>
       </div>
       <div className={styles.flex}>
         <input type="checkbox" id="view-my-spotify" />
-        <label htmlFor="view-my-spotify">
-          View from My Spotify Data database (default off)
-        </label>
+        <label htmlFor="view-my-spotify">View all (default off)</label>
       </div>
       <div className={styles.buttonSection}>
         <button className={styles.filterButton} type="submit">

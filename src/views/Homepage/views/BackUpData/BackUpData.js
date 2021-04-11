@@ -84,6 +84,19 @@ const BackUpData = (props) => {
         </div>
 
         <br />
+        <div className={styles.flex}>
+          <input
+            type="checkbox"
+            id="remove-data"
+            name="removeData"
+            onChange={onFieldChange}
+          />
+          <label htmlFor="remove-data">
+            Remove all of your data from the My Spotify Data database.
+          </label>
+        </div>
+
+        <br />
         <section className={styles.buttonSection}>
           <button className={styles.buttonStyle} type="submit">
             Submit

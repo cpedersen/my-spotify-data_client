@@ -73,9 +73,16 @@ function SearchMyPlaylists(props) {
     const { response, error } = await withAsync(() =>
       spotify.getUserPlaylists(user.id)
     );
+
     console.log({ response, error });
-    const { items } = response.body;
-    fetchTracksForPlaylists(items);
+
+    //BUG: The following line is failing with
+    // "Cannot read property 'body' of null"
+    // because "Failed to load resource: the server
+    // responded with a status of 401"
+
+    //const { items } = response.body;
+    //fetchTracksForPlaylists(items);
 
     /* if (items.length) {
       setPlaylists(items);
