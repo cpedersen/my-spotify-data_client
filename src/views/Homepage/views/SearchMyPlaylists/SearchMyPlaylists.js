@@ -14,7 +14,10 @@ import {
 import Modal from "react-modal";
 import { withAsync } from "../../../../helpers";
 import songsData from "../../../../fixtures/songs";
-import { useUserContext } from "../../../../context/UserContext";
+import {
+  useUserActionsContext,
+  useUserContext,
+} from "../../../../context/UserContext";
 import spotify from "../../../../services/spotify";
 function SearchMyPlaylists(props) {
   const [searchBy, setSearchBy] = useState("text");
@@ -24,6 +27,7 @@ function SearchMyPlaylists(props) {
   const { path, url } = useRouteMatch();
   const history = useHistory();
   const { user } = useUserContext();
+  const { refreshToken } = useUserActionsContext();
   const closeHelp = () => {
     history.push("/dashboard/search-playlists");
   };
@@ -74,6 +78,12 @@ function SearchMyPlaylists(props) {
       spotify.getUserPlaylists(user.id)
     );
 
+    if (error && error.statusCode === 401) {
+      const refreshed = await refreshToken();
+      if (refreshed) fetchUserPlaylists();
+      return;
+    }
+
     console.log({ response, error });
 
     //BUG: The following line is failing with
@@ -81,8 +91,8 @@ function SearchMyPlaylists(props) {
     // because "Failed to load resource: the server
     // responded with a status of 401"
 
-    //const { items } = response.body;
-    //fetchTracksForPlaylists(items);
+    const { items } = response.body;
+    fetchTracksForPlaylists(items);
 
     /* if (items.length) {
       setPlaylists(items);
