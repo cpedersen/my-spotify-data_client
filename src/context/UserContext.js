@@ -75,7 +75,13 @@ const UserContextProvider = (props) => {
    */
 
   /**
-   * Sync spotify data and put it in the databse
+   * Sync spotify data
+   * Put it in the databse
+   *
+   * insert into
+   * tracks (spotify_user, track_name, track_id, track_href, track_uri, track_url, artist, album, release_date)
+   * values (tbd);
+   *
    *
    * Get the playlists and tracks - See SearchMyPlaylists.js logic
    */

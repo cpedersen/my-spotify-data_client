@@ -13,14 +13,14 @@ import {
 } from "react-router-dom";
 import Modal from "react-modal";
 import { withAsync } from "../../../../helpers";
-import songsData from "../../../../fixtures/songs";
 import {
   useUserActionsContext,
   useUserContext,
 } from "../../../../context/UserContext";
 import spotify from "../../../../services/spotify";
+
 function SearchMyPlaylists(props) {
-  const [searchBy, setSearchBy] = useState("text");
+  const [searchBy, setSearchBy] = useState("title");
   const [query, setQuery] = useState("");
   const [songs, setSongs] = useState([]);
   const [filters, setFilters] = useState({});
@@ -32,14 +32,32 @@ function SearchMyPlaylists(props) {
     history.push("/dashboard/search-playlists");
   };
 
-  const onSearch = (e) => {
-    e.preventDefault();
+  const onSearch = async (e) => {
+    e?.preventDefault();
     console.log({
       query,
       searchBy,
     });
     // Perform api request to search
     // const results = searchApi.search()
+    const { response, error } = await withAsync(() =>
+      fetch(
+        `${process.env.REACT_APP_API_BASE_URL}/api/tracks?query=${query}&searchBy=${searchBy}`,
+        {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      ).then((res) => res.json())
+    );
+
+    console.log({ response, error });
+    if (error) {
+      console.error(error);
+      return;
+    }
+    setSongs(response.data);
   };
 
   const onQueryChange = (value) => {
@@ -108,7 +126,8 @@ function SearchMyPlaylists(props) {
   };
 
   useEffect(() => {
-    fetchUserPlaylists();
+    // fetchUserPlaylists();
+    onSearch();
   }, []);
 
   return (

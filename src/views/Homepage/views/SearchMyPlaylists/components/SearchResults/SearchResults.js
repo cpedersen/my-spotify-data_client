@@ -6,10 +6,10 @@ const SearchResults = (props) => {
   return (
     <div>
       <h2>Songs</h2>
-      {results.map((item) => {
+      {results?.map((item) => {
         return (
           <div key={item.id}>
-            Track: {item.track.name} ({item.playlistName})
+            Track: {item.track_name} ({item.playlistName})
           </div>
         );
       })}
