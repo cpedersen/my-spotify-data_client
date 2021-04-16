@@ -44,7 +44,9 @@ const BackUpData = (props) => {
       <header role="banner">
         <h1>Back Up Data</h1>
       </header>
+
       <form action="" onSubmit={onSubmit}>
+        {/*
         <div className={styles.flex}>
           <input
             type="checkbox"
@@ -58,19 +60,8 @@ const BackUpData = (props) => {
           </label>
         </div>
         <br />
-        <div className={styles.flex}>
-          <input
-            type="checkbox"
-            id="download-playlists-and-listening-history-input"
-            name="downloadPlaylistsAndListeningHistory"
-            onChange={onFieldChange}
-          />
-          <label htmlFor="download-playlists-and-listening-history-input">
-            Download your playlists and listening history to the My Spotify Data
-            database.
-          </label>
-        </div>
-        <br />
+        */}
+
         <div className={styles.flex}>
           <input
             type="checkbox"

@@ -36,7 +36,7 @@ function Landing(props) {
             <li>
               Afraid of losing song lists and listening history you spent hours
               developing?
-              <p>Click 'Back Up Data'</p>
+              <p>Click 'Manage Data'</p>
             </li>
           </ul>
           <section className="login-block">

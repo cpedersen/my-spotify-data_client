@@ -46,7 +46,7 @@ function Homepage(props) {
               className={styles.navLink}
               activeClassName={styles.activeTab}
             >
-              Back Up Data
+              Manage Data
             </NavLink>
           </nav>
           <Switch>
