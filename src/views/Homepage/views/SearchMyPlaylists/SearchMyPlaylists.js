@@ -22,6 +22,7 @@ import spotify from "../../../../services/spotify";
 function SearchMyPlaylists(props) {
   const [searchBy, setSearchBy] = useState("title");
   const [query, setQuery] = useState("");
+  const [playlistSongs, setPlaylistSongs] = useState([]);
   const [songs, setSongs] = useState([]);
   const [filters, setFilters] = useState({});
   const { path, url } = useRouteMatch();
@@ -57,7 +58,23 @@ function SearchMyPlaylists(props) {
       console.error(error);
       return;
     }
-    setSongs(response.data);
+    const songs = response.data.map((song) => {
+      const playlists = playlistSongs
+        .reduce((playlists, { playlistName, track }) => {
+          // This is comparing the track from the tracks table with the
+          // tracks from the playlists
+          if (track.id === song.track_id) {
+            playlists.push(playlistName);
+          }
+          return playlists;
+        }, [])
+        .join(", ");
+
+      song.playlistName = playlists;
+      return song;
+    });
+    console.log({ songs });
+    setSongs(songs);
   };
 
   const onQueryChange = (value) => {
@@ -75,6 +92,7 @@ function SearchMyPlaylists(props) {
       )
     );
     console.log({ response, error });
+    //DEBUG1
     const tracks = response
       .map(({ body }) => {
         const { id: playlistId, name: playlistName, tracks } = body;
@@ -88,7 +106,7 @@ function SearchMyPlaylists(props) {
       .flat();
 
     console.log({ tracks });
-    setSongs(tracks);
+    setPlaylistSongs(tracks);
   };
 
   const fetchUserPlaylists = async () => {
@@ -104,13 +122,8 @@ function SearchMyPlaylists(props) {
 
     console.log({ response, error });
 
-    //BUG: The following line is failing with
-    // "Cannot read property 'body' of null"
-    // because "Failed to load resource: the server
-    // responded with a status of 401"
-
-    const { items } = response.body;
-    fetchTracksForPlaylists(items);
+    const { items: playlists } = response.body;
+    fetchTracksForPlaylists(playlists);
 
     /* if (items.length) {
       setPlaylists(items);
@@ -126,7 +139,7 @@ function SearchMyPlaylists(props) {
   };
 
   useEffect(() => {
-    // fetchUserPlaylists();
+    fetchUserPlaylists();
     onSearch();
   }, []);
 

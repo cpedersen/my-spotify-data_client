@@ -13,6 +13,7 @@ import {
 } from "react-router-dom";
 import Modal from "react-modal";
 import songsData from "../../../../fixtures/songs";
+import { useUserContext } from "../../../../context/UserContext";
 
 function ViewListeningHistory(props) {
   const [form, setForm] = useState({
@@ -22,7 +23,9 @@ function ViewListeningHistory(props) {
   const [results, setResults] = useState([]);
   const [filters, setFilters] = useState({});
   const { path, url } = useRouteMatch();
+  const { user } = useUserContext();
   const history = useHistory();
+  const { id: userId, access_token } = user;
   const closeHelp = () => {
     history.push("/dashboard/view-listening-history");
   };
@@ -44,8 +47,29 @@ function ViewListeningHistory(props) {
     });
   };
 
+  const fetchHistory = async () => {
+    try {
+      const response = await fetch(
+        `${process.env.REACT_APP_API_BASE_URL}/api/listening_history/${userId}`,
+        {
+          method: "get",
+          headers: {
+            Authorization: `Bearer: ${access_token}`,
+            "Content-Type": "application/json",
+          },
+        }
+      );
+      console.log({ response });
+      const data = await response.json();
+      console.log({ data, items: data.response.body.items });
+      setResults(data.response.body.items);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   useEffect(() => {
-    setResults(songsData.data);
+    fetchHistory();
   }, []);
 
   return (

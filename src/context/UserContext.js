@@ -77,6 +77,8 @@ const UserContextProvider = (props) => {
   /**
    * Sync spotify data
    * Put it in the databse
+   
+
    *
    * insert into
    * tracks (spotify_user, track_name, track_id, track_href, track_uri, track_url, artist, album, release_date)
@@ -86,8 +88,27 @@ const UserContextProvider = (props) => {
    * Get the playlists and tracks - See SearchMyPlaylists.js logic
    */
 
-  const createUser = ({ id }) => {
+  const createSyncUser = async ({ id, access_token }) => {
     console.log("create user", id);
+    try {
+      const response = await fetch(
+        `${process.env.REACT_APP_API_BASE_URL}/api/users`,
+        {
+          method: "PUT",
+          body: JSON.stringify({
+            userId: id,
+          }),
+          headers: {
+            Authorization: `Bearer ${access_token}`,
+            "Content-Type": "application/json",
+          },
+        }
+      );
+
+      console.log({ response });
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   useEffect(() => {
@@ -109,7 +130,7 @@ const UserContextProvider = (props) => {
         window.localStorage.setItem("user-details", JSON.stringify(data));
         history.push("/dashboard/search-playlists");
 
-        await Promise.all([handleTokenRefresh(data), createUser(data)]);
+        await Promise.all([handleTokenRefresh(data), createSyncUser(data)]);
       } else {
         // User is not logged in, go to the landing page
         history.push("/");

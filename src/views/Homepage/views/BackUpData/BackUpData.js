@@ -8,7 +8,8 @@ import {
 } from "react-router-dom";
 import Modal from "react-modal";
 import styles from "./backUpData.module.css";
-
+import SyncData from "../../../../components/SyncData/SyncData";
+import ExportData from "../../../../components/ExportData/ExportData";
 const BackUpData = (props) => {
   const [form, setForm] = useState({
     requestCompleteDownload: false,
@@ -44,7 +45,8 @@ const BackUpData = (props) => {
       <header role="banner">
         <h1>Back Up Data</h1>
       </header>
-
+      <SyncData />
+      <ExportData />
       <form action="" onSubmit={onSubmit}>
         {/*
         <div className={styles.flex}>

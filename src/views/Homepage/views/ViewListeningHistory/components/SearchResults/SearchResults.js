@@ -7,7 +7,11 @@ const SearchResults = (props) => {
     <div>
       <h2>Songs</h2>
       {results.map((item) => {
-        return <div key={item.id}>Track: {item.track}</div>;
+        return (
+          <div key={`${item.track.id}-${item.played_at}`}>
+            Track: {item.track.name}
+          </div>
+        );
       })}
     </div>
   );
