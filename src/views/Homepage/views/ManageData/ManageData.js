@@ -7,7 +7,7 @@ import {
   useHistory,
 } from "react-router-dom";
 import Modal from "react-modal";
-import styles from "./manageData.module.css";
+import styles from "./ManageData.module.css";
 import SyncData from "../../../../components/SyncData/SyncData";
 import ExportData from "../../../../components/ExportData/ExportData";
 const ManageData = (props) => {
