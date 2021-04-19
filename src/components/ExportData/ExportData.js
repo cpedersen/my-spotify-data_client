@@ -35,11 +35,14 @@ const ExportData = () => {
       const typeObj = typeof data.rows;
       console.log("typeof: ", typeObj);
 
+      const firstRow = data.rows[0];
+      console.log({ firstRow });
+
       // TODO: Fix data.rows export to csv
       //data: [{ track_name: "Best of You", playlist_name: "Foo Fighters" }],
       saveAsCsv({
         data: data.rows,
-        fields: ["track_name", "playlist_name"],
+        fields: { track_name: "track_name", playlist_name: "playlist_name" },
         filename: "Playlist tracks",
       });
 
