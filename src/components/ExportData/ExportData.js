@@ -35,16 +35,23 @@ const ExportData = () => {
       const typeObj = typeof data.rows;
       console.log("typeof: ", typeObj);
 
-      const jsonConvert = JSON.parse(data.rows);
-
       // TODO: Fix data.rows export to csv
+      //data: [{ track_name: "Best of You", playlist_name: "Foo Fighters" }],
       saveAsCsv({
-        data: jsonConvert,
+        data: data.rows,
         fields: ["track_name", "playlist_name"],
         filename: "Playlist tracks",
       });
+
+      /*<JsonToCsv
+        data={data.rows}
+        filename={"Playlist tracks"}
+        fields={("track_name", "playlist_name")}
+        style=""
+        text={"Convert Json to Csv"}
+      />;*/
     } catch (error) {
-      console.error("Error: ", error);
+      console.error(error);
       setSyncStatus(ERROR);
     }
   };
