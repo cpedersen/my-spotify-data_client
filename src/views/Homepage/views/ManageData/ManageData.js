@@ -7,10 +7,10 @@ import {
   useHistory,
 } from "react-router-dom";
 import Modal from "react-modal";
-import styles from "./backUpData.module.css";
+import styles from "./manageData.module.css";
 import SyncData from "../../../../components/SyncData/SyncData";
 import ExportData from "../../../../components/ExportData/ExportData";
-const BackUpData = (props) => {
+const ManageData = (props) => {
   const [form, setForm] = useState({
     requestCompleteDownload: false,
     downloadPlaylistsAndListeningHistory: false,
@@ -20,7 +20,7 @@ const BackUpData = (props) => {
   const history = useHistory();
 
   const closeHelp = () => {
-    history.push("/dashboard/back-up-data");
+    history.push("/dashboard/manage-data");
   };
 
   const onFieldChange = (e) => {
@@ -43,27 +43,13 @@ const BackUpData = (props) => {
   return (
     <main className={styles.container} role="backup">
       <header role="banner">
-        <h1>Back Up Data</h1>
+        <h1>Manage Data</h1>
       </header>
-      <SyncData />
-      <ExportData />
+      <SyncData /> Back up latest Spotify data to My Spotify Data DB.
+      <br />
+      <ExportData /> Export your data from the My Spotify Data database.
       <form action="" onSubmit={onSubmit}>
         {/*
-        <div className={styles.flex}>
-          <input
-            type="checkbox"
-            id="request-complete-download-input"
-            name="requestCompleteDownload"
-            onChange={onFieldChange}
-          />
-          <label htmlFor="request-complete-download-input">
-            Request a complete download of your data from Spotify (e.g.,
-            playlists, search queries, followers, streaming history).
-          </label>
-        </div>
-        <br />
-        */}
-
         <div className={styles.flex}>
           <input
             type="checkbox"
@@ -88,18 +74,20 @@ const BackUpData = (props) => {
             Remove all of your data from the My Spotify Data database.
           </label>
         </div>
+        */}
 
+        {/* TODO: Not sure if I need a form and a Submit button
         <br />
         <section className={styles.buttonSection}>
           <button className={styles.buttonStyle} type="submit">
             Submit
           </button>
           <br />
-          {/*<button className="resetButton">Reset</button>*/}
         </section>
+        */}
       </form>
       <Link to={`${url}/help`} className={styles.helpLink}>
-        Back up data help
+        Manage data help
       </Link>
       <Switch>
         <Route path={`${path}/help`}>
@@ -108,7 +96,7 @@ const BackUpData = (props) => {
             onRequestClose={closeHelp}
             style={{ overlay: { zIndex: 20 } }}
           >
-            <div>back up data help</div>
+            <div>manage data help</div>
           </Modal>
         </Route>
       </Switch>
@@ -116,4 +104,4 @@ const BackUpData = (props) => {
   );
 };
 
-export default BackUpData;
+export default ManageData;

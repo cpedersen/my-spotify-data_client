@@ -3,7 +3,7 @@
 import styles from "./Homepage.module.css";
 import Navigation from "../../components/Nav/Nav";
 import { NavLink, Switch, Route } from "react-router-dom";
-import { BackUpData } from "./views/BackUpData";
+import { ManageData } from "./views/ManageData";
 import { SearchMyPlaylists } from "./views/SearchMyPlaylists";
 import { SearchMySongs } from "./views/SearchMySongs";
 import { ViewListeningHistory } from "./views/ViewListeningHistory";
@@ -27,6 +27,8 @@ function Homepage(props) {
             >
               Search My Playlists
             </NavLink>
+
+            {/*
             <NavLink
               to={`${path}/search-songs`}
               className={styles.navLink}
@@ -34,6 +36,8 @@ function Homepage(props) {
             >
               Search My Songs
             </NavLink>
+            */}
+
             <NavLink
               to={`${path}/view-listening-history`}
               className={styles.navLink}
@@ -51,7 +55,7 @@ function Homepage(props) {
           </nav>
           <Switch>
             <Route path={`${path}/back-up-data`}>
-              <BackUpData />
+              <ManageData />
             </Route>
             <Route path={`${path}/search-playlists`}>
               <SearchMyPlaylists />

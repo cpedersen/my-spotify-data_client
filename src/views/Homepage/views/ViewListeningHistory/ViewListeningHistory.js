@@ -83,6 +83,7 @@ function ViewListeningHistory(props) {
         <section className={styles.searchResultsContainer}>
           <SearchResults results={results} />
         </section>
+        {/* TODO: To implement in the future
         <aside className={styles.filtersAside}>
           <Filters
             filters={filters}
@@ -90,6 +91,7 @@ function ViewListeningHistory(props) {
             onSubmit={onSubmit}
           />
         </aside>
+        */}
       </main>
 
       <Link to={`${url}/help`} className={styles.helpLink}>
