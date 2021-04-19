@@ -46,7 +46,7 @@ function Homepage(props) {
               View Listening History
             </NavLink>
             <NavLink
-              to={`${path}/back-up-data`}
+              to={`${path}/manage-data`}
               className={styles.navLink}
               activeClassName={styles.activeTab}
             >
@@ -54,7 +54,7 @@ function Homepage(props) {
             </NavLink>
           </nav>
           <Switch>
-            <Route path={`${path}/back-up-data`}>
+            <Route path={`${path}/manage-data`}>
               <ManageData />
             </Route>
             <Route path={`${path}/search-playlists`}>
