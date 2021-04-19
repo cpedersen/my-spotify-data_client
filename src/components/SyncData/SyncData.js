@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useUserContext } from "../../context/UserContext";
 import { apiStatus } from "../../constants";
+import styles from "./syncData.module.css";
 const { IDLE, PENDING, SUCCESS, ERROR } = apiStatus;
 
 const SyncData = () => {
@@ -34,9 +35,11 @@ const SyncData = () => {
 
   return (
     <>
-      {syncStatus === ERROR
-        ? "There was a problem while syncing. Please try again."
-        : null}
+      <div className={styles.errorContainer}>
+        {syncStatus === ERROR
+          ? "There was a problem while syncing. Please try again."
+          : null}
+      </div>
       <button onClick={syncData} disabled={syncStatus === PENDING}>
         {syncStatus === PENDING ? "Syncing..." : "Sync data"}
       </button>

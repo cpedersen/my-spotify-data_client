@@ -10,6 +10,7 @@ import Modal from "react-modal";
 import styles from "./manageData.module.css";
 import SyncData from "../../../../components/SyncData/SyncData";
 import ExportData from "../../../../components/ExportData/ExportData";
+
 const ManageData = (props) => {
   const [form, setForm] = useState({
     requestCompleteDownload: false,
@@ -45,7 +46,7 @@ const ManageData = (props) => {
       <header role="banner">
         <h1>Manage Data</h1>
       </header>
-      <SyncData /> Back up latest Spotify data to My Spotify Data DB.
+      <SyncData /> Back up your latest Spotify data to My Spotify Data DB.
       <br />
       <ExportData /> Export your data from the My Spotify Data database.
       <form action="" onSubmit={onSubmit}>
