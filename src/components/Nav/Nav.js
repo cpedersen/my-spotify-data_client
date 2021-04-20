@@ -17,7 +17,7 @@ function Nav(props) {
               Log out
             </Link>
           ) : (
-            <Link to="/">Log in</Link>
+            <Link to="/"></Link>
           )}
         </div>
         <div className={styles.about}>
