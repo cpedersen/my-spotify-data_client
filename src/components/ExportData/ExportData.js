@@ -3,6 +3,7 @@ import { JsonToCsv, useJsonToCsv } from "react-json-csv";
 import { useUserContext } from "../../context/UserContext";
 import { apiStatus } from "../../constants";
 import styles from "./exportData.module.css";
+import config from "../../config";
 const { IDLE, PENDING, SUCCESS, ERROR } = apiStatus;
 
 const ExportData = () => {
@@ -15,7 +16,7 @@ const ExportData = () => {
     try {
       setSyncStatus(PENDING);
       const response = await fetch(
-        `${process.env.REACT_APP_API_BASE_URL}/api/users/export-data/${id}`,
+        `${config.REACT_APP_BASE_URL}/api/users/export-data/${id}`,
         {
           method: "get",
           headers: {

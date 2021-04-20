@@ -14,6 +14,7 @@ import {
 import Modal from "react-modal";
 import songsData from "../../../../fixtures/songs";
 import { useUserContext } from "../../../../context/UserContext";
+import config from "../../../../config";
 
 function ViewListeningHistory(props) {
   const [form, setForm] = useState({
@@ -50,7 +51,7 @@ function ViewListeningHistory(props) {
   const fetchHistory = async () => {
     try {
       const response = await fetch(
-        `${process.env.REACT_APP_API_BASE_URL}/api/listening_history/${userId}`,
+        `${config.REACT_APP_BASE_URL}/api/listening_history/${userId}`,
         {
           method: "get",
           headers: {

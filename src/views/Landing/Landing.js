@@ -2,6 +2,7 @@
 import Nav from "../../components/Nav/Nav";
 import { useHistory } from "react-router-dom";
 import styles from "./landing.module.css";
+import config from "../../config";
 
 function Landing(props) {
   const history = useHistory();
@@ -42,7 +43,7 @@ function Landing(props) {
           <section className="login-block">
             <p>Log into Spotify to get started...</p>
             <a
-              href={`${process.env.REACT_APP_API_BASE_URL}/login`}
+              href={`${config.REACT_APP_BASE_URL}/login`}
               aria-label="Login with Spotify credentials"
               className={styles.buttonStyle}
             >

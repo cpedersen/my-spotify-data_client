@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useUserContext } from "../../context/UserContext";
 import { apiStatus } from "../../constants";
 import styles from "./syncData.module.css";
+import config from "../../config";
 const { IDLE, PENDING, SUCCESS, ERROR } = apiStatus;
 
 const SyncData = () => {
@@ -13,7 +14,7 @@ const SyncData = () => {
     try {
       setSyncStatus(PENDING);
       const response = await fetch(
-        `${process.env.REACT_APP_API_BASE_URL}/api/tracks/sync`,
+        `${config.REACT_APP_BASE_URL}/api/tracks/sync`,
         {
           method: "post",
           body: JSON.stringify({

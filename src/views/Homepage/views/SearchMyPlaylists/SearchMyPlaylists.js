@@ -18,6 +18,7 @@ import {
   useUserContext,
 } from "../../../../context/UserContext";
 import spotify from "../../../../services/spotify";
+import config from "../../../../config";
 
 function SearchMyPlaylists(props) {
   const [searchBy, setSearchBy] = useState("title");
@@ -43,7 +44,7 @@ function SearchMyPlaylists(props) {
     // const results = searchApi.search()
     const { response, error } = await withAsync(() =>
       fetch(
-        `${process.env.REACT_APP_API_BASE_URL}/api/tracks?query=${query}&searchBy=${searchBy}`,
+        `${config.REACT_APP_BASE_URL}/api/tracks?query=${query}&searchBy=${searchBy}`,
         {
           method: "GET",
           headers: {

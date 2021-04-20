@@ -4,6 +4,8 @@ import { contextFactory } from "./helpers/contextFactory";
 import { useURLParams } from "../hooks";
 import spotify from "../services/spotify";
 import { withAsync } from "../helpers";
+import config from "../config";
+
 console.log({ spotify });
 const [useUserContext, UserContext] = contextFactory();
 const [useUserActionsContext, UserActionsContext] = contextFactory();
@@ -91,19 +93,16 @@ const UserContextProvider = (props) => {
   const createSyncUser = async ({ id, access_token }) => {
     console.log("create user", id);
     try {
-      const response = await fetch(
-        `${process.env.REACT_APP_API_BASE_URL}/api/users`,
-        {
-          method: "PUT",
-          body: JSON.stringify({
-            userId: id,
-          }),
-          headers: {
-            Authorization: `Bearer ${access_token}`,
-            "Content-Type": "application/json",
-          },
-        }
-      );
+      const response = await fetch(`${config.REACT_APP_BASE_URL}/api/users`, {
+        method: "PUT",
+        body: JSON.stringify({
+          userId: id,
+        }),
+        headers: {
+          Authorization: `Bearer ${access_token}`,
+          "Content-Type": "application/json",
+        },
+      });
 
       console.log({ response });
     } catch (error) {
@@ -158,7 +157,7 @@ const UserContextProvider = (props) => {
     // Refresh the token
     const { response, error } = await withAsync(() =>
       fetch(
-        `${process.env.REACT_APP_API_BASE_URL}/refresh_token?refresh_token=${refresh_token}`
+        `${config.REACT_APP_BASE_URL}/refresh_token?refresh_token=${refresh_token}`
       ).then((res) => res.json())
     );
 
