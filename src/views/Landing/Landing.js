@@ -43,7 +43,11 @@ function Landing(props) {
             </li>
           </ul>
           <section className="login-block">
-            <p>Log into Spotify to get started...</p>
+            <p>
+              Use 'cpederse@hotmail.com' for the login and 'Thinkful2021!' for
+              the password.
+            </p>
+            <p>Log into Spotify now to get started...</p>
             <a
               href={`${process.env.REACT_APP_BASE_URL}/login`}
               aria-label="Login with Spotify credentials"
