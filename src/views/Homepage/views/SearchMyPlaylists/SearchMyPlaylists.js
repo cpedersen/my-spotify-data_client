@@ -39,9 +39,13 @@ function SearchMyPlaylists(props) {
     console.log({
       query,
       searchBy,
+      user,
     });
     // Perform api request to search
     // const results = searchApi.search()
+
+    // &spotify_user=${user.id}
+
     const { response, error } = await withAsync(() =>
       fetch(
         `${process.env.REACT_APP_BASE_URL}/api/tracks?query=${query}&searchBy=${searchBy}&spotify_user=${user.id}`,
