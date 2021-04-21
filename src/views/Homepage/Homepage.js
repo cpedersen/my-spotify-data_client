@@ -1,6 +1,6 @@
 // import React, { Component } from "react";
 //import { Link } from "react-router-dom";
-import styles from "./Homepage.module.css";
+import styles from "./homepage.module.css";
 import Navigation from "../../components/Nav/Nav";
 import { NavLink, Switch, Route } from "react-router-dom";
 import { ManageData } from "./views/ManageData";
