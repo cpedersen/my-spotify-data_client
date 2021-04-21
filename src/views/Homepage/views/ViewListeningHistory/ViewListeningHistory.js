@@ -51,7 +51,7 @@ function ViewListeningHistory(props) {
   const fetchHistory = async () => {
     try {
       const response = await fetch(
-        `${config.REACT_APP_BASE_URL}/api/listening_history/${userId}`,
+        `${process.env.REACT_APP_BASE_URL}/api/listening_history/${userId}`,
         {
           method: "get",
           headers: {

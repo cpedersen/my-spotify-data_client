@@ -14,7 +14,7 @@ const SyncData = () => {
     try {
       setSyncStatus(PENDING);
       const response = await fetch(
-        `${config.REACT_APP_BASE_URL}/api/tracks/sync`,
+        `${process.env.REACT_APP_BASE_URL}/api/tracks/sync`,
         {
           method: "post",
           body: JSON.stringify({

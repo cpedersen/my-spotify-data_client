@@ -44,7 +44,7 @@ function SearchMyPlaylists(props) {
     // const results = searchApi.search()
     const { response, error } = await withAsync(() =>
       fetch(
-        `${config.REACT_APP_BASE_URL}/api/tracks?query=${query}&searchBy=${searchBy}`,
+        `${process.env.REACT_APP_BASE_URL}/api/tracks?query=${query}&searchBy=${searchBy}&spotify_user=${user.id}`,
         {
           method: "GET",
           headers: {
@@ -59,13 +59,13 @@ function SearchMyPlaylists(props) {
       console.error(error);
       return;
     }
-    const songs = response.data.map((song) => {
+    /*const songs = response.data.map((song) => {
       const playlists = playlistSongs
-        .reduce((playlists, { playlistName, track }) => {
+        .reduce((playlists, { playlist_name, track }) => {
           // This is comparing the track from the tracks table with the
           // tracks from the playlists
           if (track.id === song.track_id) {
-            playlists.push(playlistName);
+            playlists.push(playlist_name);
           }
           return playlists;
         }, [])
@@ -73,74 +73,16 @@ function SearchMyPlaylists(props) {
 
       song.playlistName = playlists;
       return song;
-    });
-    console.log({ songs });
-    setSongs(songs);
+    });*/
+    setSongs(response.data);
   };
 
   const onQueryChange = (value) => {
     setQuery(value);
   };
 
-  const fetchTracksForPlaylists = async (playlists) => {
-    const { response, error } = await withAsync(() =>
-      Promise.all(
-        playlists.map((playlist) =>
-          spotify.getPlaylist(playlist.id, {
-            limit: 500,
-          })
-        )
-      )
-    );
-    console.log({ response, error });
-    //DEBUG1
-    const tracks = response
-      .map(({ body }) => {
-        const { id: playlistId, name: playlistName, tracks } = body;
-        const { items } = tracks;
-        return items.map((item) => {
-          item.playlistName = playlistName;
-          item.playlistId = playlistId;
-          return item;
-        });
-      })
-      .flat();
-
-    console.log({ tracks });
-    setPlaylistSongs(tracks);
-  };
-
-  const fetchUserPlaylists = async () => {
-    const { response, error } = await withAsync(() =>
-      spotify.getUserPlaylists(user.id)
-    );
-
-    if (error && error.statusCode === 401) {
-      const refreshed = await refreshToken();
-      if (refreshed) fetchUserPlaylists();
-      return;
-    }
-
-    console.log({ response, error });
-
-    const { items: playlists } = response.body;
-    fetchTracksForPlaylists(playlists);
-
-    /* if (items.length) {
-      setPlaylists(items);
-    } */
-
-    /*try {
-      console.log({ user });
-      const response = await spotify.getUserPlaylists(user.id);
-      console.log({ response });
-    } catch (error) {
-      console.error(error);
-    }*/
-  };
-
   useEffect(() => {
-    fetchUserPlaylists();
+    // fetchUserPlaylists();
     onSearch();
   }, []);
 

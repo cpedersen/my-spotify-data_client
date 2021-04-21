@@ -93,16 +93,19 @@ const UserContextProvider = (props) => {
   const createSyncUser = async ({ id, access_token }) => {
     console.log("create user", id);
     try {
-      const response = await fetch(`${config.REACT_APP_BASE_URL}/api/users`, {
-        method: "PUT",
-        body: JSON.stringify({
-          userId: id,
-        }),
-        headers: {
-          Authorization: `Bearer ${access_token}`,
-          "Content-Type": "application/json",
-        },
-      });
+      const response = await fetch(
+        `${process.env.REACT_APP_BASE_URL}/api/users`,
+        {
+          method: "PUT",
+          body: JSON.stringify({
+            userId: id,
+          }),
+          headers: {
+            Authorization: `Bearer ${access_token}`,
+            "Content-Type": "application/json",
+          },
+        }
+      );
 
       console.log({ response });
     } catch (error) {
@@ -157,7 +160,7 @@ const UserContextProvider = (props) => {
     // Refresh the token
     const { response, error } = await withAsync(() =>
       fetch(
-        `${config.REACT_APP_BASE_URL}/refresh_token?refresh_token=${refresh_token}`
+        `${process.env.REACT_APP_BASE_URL}/refresh_token?refresh_token=${refresh_token}`
       ).then((res) => res.json())
     );
 

@@ -16,7 +16,7 @@ const ExportData = () => {
     try {
       setSyncStatus(PENDING);
       const response = await fetch(
-        `${config.REACT_APP_BASE_URL}/api/users/export-data/${id}`,
+        `${process.env.REACT_APP_BASE_URL}/api/users/export-data/${id}`,
         {
           method: "get",
           headers: {

@@ -45,7 +45,7 @@ function Landing(props) {
           <section className="login-block">
             <p>Log into Spotify to get started...</p>
             <a
-              href={`${config.REACT_APP_BASE_URL}/login`}
+              href={`${process.env.REACT_APP_BASE_URL}/login`}
               aria-label="Login with Spotify credentials"
               className={styles.buttonStyle}
             >
