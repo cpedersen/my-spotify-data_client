@@ -97,7 +97,11 @@ const ManageData = (props) => {
             onRequestClose={closeHelp}
             style={{ overlay: { zIndex: 20 } }}
           >
-            <div>manage data help</div>
+            <div className={styles.helpText}>
+              Use Manage Data to view the latest Spotify changes to your
+              account, or to export your songs and playlists to a csv file in
+              the Downloads directory of your computer.
+            </div>
           </Modal>
         </Route>
       </Switch>

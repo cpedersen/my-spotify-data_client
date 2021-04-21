@@ -22,3 +22,8 @@
   /* TODO: Bring back when filtering is implemented */
   /*grid-area: 1 / 2 / 3 / 3;*/
 }
+
+.helpText {
+  font-size: medium;
+  text-align: left;
+}

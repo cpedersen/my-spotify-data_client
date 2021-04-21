@@ -109,7 +109,7 @@ function SearchMySongs(props) {
             onRequestClose={closeHelp}
             style={{ overlay: { zIndex: 20 } }}
           >
-            <div>search songs help</div>
+            <div>Search songs help</div>
           </Modal>
         </Route>
       </Switch>

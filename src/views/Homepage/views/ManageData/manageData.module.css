@@ -98,3 +98,8 @@ li:nth-child(odd) {
 input {
   margin-top: 8px;
 }
+
+.helpText {
+  font-size: medium;
+  text-align: left;
+}

@@ -123,7 +123,11 @@ function SearchMyPlaylists(props) {
             onRequestClose={closeHelp}
             style={{ overlay: { zIndex: 20 } }}
           >
-            <div>search playlists help</div>
+            <div className={styles.helpText}>
+              Use Search My Playlists to locate the playlists where your songs
+              are saved. The initial display will show you all of your songs.
+              You can search by song name or by the Spotify url.
+            </div>
           </Modal>
         </Route>
       </Switch>

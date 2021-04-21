@@ -8,9 +8,6 @@ const About = (props) => {
   console.log("history ", history);
   return (
     <section className={styles.container}>
-      {/*<form>
-        <input type="button" value="Go back!" onclick="history.back()">
-      </form>*/}
       <button onClick={() => props.history.goBack()} className="link">
         Go back...
       </button>
@@ -20,7 +17,7 @@ const About = (props) => {
           The My Spotify Data app provides a way for users to search for songs
           in their playlists, functionality not provided by Spotify's user
           interface. In addition, My Spotify Data displays the user's listening
-          history and creates CSV files containing the user's playlists and
+          history and creates a CSV file containing the user's playlists and
           songs. In this way, the user can always be assured that they have a
           backup of their Spotify data.
         </p>

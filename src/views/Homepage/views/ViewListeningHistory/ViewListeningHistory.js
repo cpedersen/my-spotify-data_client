@@ -105,7 +105,10 @@ function ViewListeningHistory(props) {
             onRequestClose={closeHelp}
             style={{ overlay: { zIndex: 20 } }}
           >
-            <div>View listening history help</div>
+            <div className={styles.helpText}>
+              Use View listening History to see when you listened to the last 50
+              songs you played on Spotify.
+            </div>
           </Modal>
         </Route>
       </Switch>
