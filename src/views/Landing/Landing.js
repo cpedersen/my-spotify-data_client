@@ -24,11 +24,13 @@ function Landing(props) {
               Ever wonder if a particular song is in any of your playlists?
               <p>Click 'Search My Playlists'</p>
             </li>
+            {/*
             <li>
               Curious to explore interesting characteristics about your songs
               (e.g., danceability, energy, loudness)?
               <p>Click 'Search My Songs'</p>
             </li>
+            */}
             <li>
               Want a way to view your song listening history?{" "}
               <p>Click 'View Listening History'</p>
