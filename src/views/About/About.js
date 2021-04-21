@@ -1,12 +1,19 @@
 import React, { Component } from "react";
+import { useHistory } from "react-router-dom";
 import styles from "./about.module.css";
 
 const About = (props) => {
+  let history = useHistory();
+  console.log("props ", props);
+  console.log("history ", history);
   return (
     <section className={styles.container}>
       {/*<form>
         <input type="button" value="Go back!" onclick="history.back()">
       </form>*/}
+      <button onClick={() => props.history.goBack()} className="link">
+        Go back...
+      </button>
       <div className={styles.helpSection}>
         <h1 className={styles.header1}>General Help</h1>
         <p>
