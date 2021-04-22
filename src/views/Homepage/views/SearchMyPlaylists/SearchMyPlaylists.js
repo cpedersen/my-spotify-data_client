@@ -95,7 +95,7 @@ function SearchMyPlaylists(props) {
       <Nav />
       <header role="banner">
         <h1>Search My Playlists</h1>
-        <p>{user.id}</p>
+        <p>Username: {user.id}</p>
       </header>
 
       <main>
