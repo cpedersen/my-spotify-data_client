@@ -37,8 +37,7 @@ function Landing(props) {
             </li>
 
             <li>
-              Afraid of losing song lists and listening history you spent hours
-              developing?
+              Afraid of losing song lists you spent hours compiling?
               <p>Click 'Manage Data'</p>
             </li>
           </ul>
