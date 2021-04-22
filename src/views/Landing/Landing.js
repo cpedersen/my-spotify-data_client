@@ -43,8 +43,8 @@ function Landing(props) {
           </ul>
           <section className="login-block">
             <p>
-              Use 'cpederse@hotmail.com' for the login and '7zmh6mbzhst' for the
-              password.
+              Use 't9dgdc5lr7uxj9eja1yze5i1m' for the login and 'Thinkful2021!'
+              for the password.
             </p>
             <p>Log into Spotify now to get started...</p>
             <a
