@@ -1,71 +1,38 @@
-# Getting Started with Create React App
+# My Spotify Data
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## App Summary
 
-## Available Scripts
+The `My Spotify Data` application enables users to search their playlists, looking for songs. This is functionality not provided by the Spotify interface. In addition, the app enables a user to view their recent listening history and export their song data to a CSV file.
 
-In the project directory, you can run:
+## Live App
 
-### `yarn start`
+https://my-spotify-data-client.vercel.app
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## APIs & Database Used
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- Spotify Developer APIs to GET the user's playlists, tracks, and current listening history.
+- Heroku PostgreSQL 'spotify' database with spotify_users, playlists, and tracks tables.
 
-### `yarn test`
+## Landing Page
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The landing page gives you an overview of the application and allows you to log in using either your own Spotify credentials or a test user's credentials. A link to About help is provided for additional information about the app.
 
-### `yarn build`
+![Alt text](./images/LandingPage.jpg?raw=true "LandingPage")
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Search My Playlists
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+The Search My Playlists screen enables you to search your playlists to find where you have saved a particular song. Two filter options are provided: 1) text option, 2) Spotify URL option.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+![Alt text](./images/SearchMyPlaylists.jpg?raw=true "SearchMyPlaylists")
 
-### `yarn eject`
+## View Listening History
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+The View Listening History screen provides a display of the most recent songs you have listened to (up to a max of 50).
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+![Alt text](./images/ViewListeningHistory.jpg?raw=true "ViewListeningHistory")
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Manage Data
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+The Manage Data screen enables you to sync data after you are already logged into the app. It also enables you to export your song data to a csv file.
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# my-spotify-data-static_client
+![Alt text](./images/ManageData.jpg?raw=true "ManageData")
