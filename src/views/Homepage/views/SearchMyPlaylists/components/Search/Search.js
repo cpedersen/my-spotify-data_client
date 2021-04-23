@@ -4,7 +4,7 @@ import styles from "./search.module.css";
 const Search = (props) => {
   const { query, onQueryChange, searchBy, setSearchBy, onSearch } = props;
   return (
-    <section role="search-playlist">
+    <section role="search">
       Search
       <div className="field">
         <input

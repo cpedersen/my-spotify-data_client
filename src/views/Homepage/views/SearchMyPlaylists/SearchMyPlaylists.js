@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import styles from "./searchMyPlaylists.module.css";
 import Nav from "../../../../components/Nav/Nav";
-import { Filters } from "./components/Filters";
 import { Search } from "./components/Search";
 import { SearchResults } from "./components/SearchResults";
 import {
@@ -14,22 +13,20 @@ import {
 import Modal from "react-modal";
 import { withAsync } from "../../../../helpers";
 import {
-  useUserActionsContext,
+  //useUserActionsContext,
   useUserContext,
 } from "../../../../context/UserContext";
-import spotify from "../../../../services/spotify";
-import config from "../../../../config";
 
 function SearchMyPlaylists(props) {
   const [searchBy, setSearchBy] = useState("title");
   const [query, setQuery] = useState("");
-  const [playlistSongs, setPlaylistSongs] = useState([]);
+  //const [playlistSongs, setPlaylistSongs] = useState([]);
   const [songs, setSongs] = useState([]);
-  const [filters, setFilters] = useState({});
+  //const [filters, setFilters] = useState({});
   const { path, url } = useRouteMatch();
   const history = useHistory();
   const { user } = useUserContext();
-  const { refreshToken } = useUserActionsContext();
+  //const { refreshToken } = useUserActionsContext();
   const closeHelp = () => {
     history.push("/dashboard/search-playlists");
   };
@@ -88,6 +85,7 @@ function SearchMyPlaylists(props) {
   useEffect(() => {
     // fetchUserPlaylists();
     onSearch();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -99,7 +97,7 @@ function SearchMyPlaylists(props) {
       </header>
 
       <main>
-        <form className={styles.mainContent} role="search-playlists">
+        <form className={styles.mainContent} role="search">
           <section className={styles.searchFieldsContainer}>
             <Search
               query={query}

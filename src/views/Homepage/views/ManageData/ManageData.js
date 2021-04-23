@@ -12,7 +12,8 @@ import SyncData from "../../../../components/SyncData/SyncData";
 import ExportData from "../../../../components/ExportData/ExportData";
 
 const ManageData = (props) => {
-  const [form, setForm] = useState({
+  //const [form, setForm] = useState({
+  const [form] = useState({
     requestCompleteDownload: false,
     downloadPlaylistsAndListeningHistory: false,
     exportData: false,
@@ -24,7 +25,7 @@ const ManageData = (props) => {
     history.push("/dashboard/manage-data");
   };
 
-  const onFieldChange = (e) => {
+  /*const onFieldChange = (e) => {
     const { name, checked } = e.target;
     console.log({ name, checked });
     setForm((formState) => {
@@ -34,22 +35,23 @@ const ManageData = (props) => {
         [name]: checked,
       };
     });
-  };
+  };*/
 
   const onSubmit = async (e) => {
     e.preventDefault();
     console.log("on submit", form);
   };
 
+  // TODO - use action?
   return (
-    <main className={styles.container} role="backup">
+    <main className={styles.container}>
       <header role="banner">
         <h1>Manage Data</h1>
       </header>
       <SyncData /> Back up your latest Spotify data to My Spotify Data DB.
       <br />
       <ExportData /> Export your data from the My Spotify Data database.
-      <form action="" onSubmit={onSubmit}>
+      <form onSubmit={onSubmit}>
         {/*
         <div className={styles.flex}>
           <input

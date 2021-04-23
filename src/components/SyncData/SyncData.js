@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useUserContext } from "../../context/UserContext";
 import { apiStatus } from "../../constants";
 import styles from "./syncData.module.css";
-import config from "../../config";
 const { IDLE, PENDING, SUCCESS, ERROR } = apiStatus;
 
 const SyncData = () => {
@@ -36,7 +35,7 @@ const SyncData = () => {
 
   return (
     <>
-      <div className={styles.errorContainer}>
+      <div role="textbox" className={styles.errorContainer}>
         {syncStatus === ERROR
           ? "There was a problem while syncing. Please try again."
           : null}

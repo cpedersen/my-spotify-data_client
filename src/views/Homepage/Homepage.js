@@ -18,7 +18,7 @@ function Homepage(props) {
         <header role="banner">
           <h1 className={styles.title}>My Spotify Data</h1>
         </header>
-        <section>
+        <section className={styles.container}>
           <nav className={styles.list}>
             <NavLink
               to={`${path}/search-playlists`}

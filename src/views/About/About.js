@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import { useHistory } from "react-router-dom";
 import styles from "./about.module.css";
 
@@ -8,10 +8,14 @@ const About = (props) => {
   console.log("history ", history);
   return (
     <section className={styles.container}>
-      <button onClick={() => props.history.goBack()} className="link">
+      <button
+        role="navigation"
+        onClick={() => props.history.goBack()}
+        className="link"
+      >
         Go back...
       </button>
-      <div className={styles.helpSection}>
+      <div role="textbox" className={styles.helpSection}>
         <h1 className={styles.header1}>General Help</h1>
         <p>
           The My Spotify Data app provides a way for users to search for songs

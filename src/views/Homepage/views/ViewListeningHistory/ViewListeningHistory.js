@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import React from "react";
 import styles from "./viewListeningHistory.module.css";
 import Nav from "../../../../components/Nav/Nav";
-import { Filters } from "./components/Filters";
+//import { Filters } from "./components/Filters";
 import { SearchResults } from "./components/SearchResults";
 import {
   Switch,
@@ -12,17 +12,17 @@ import {
   useHistory,
 } from "react-router-dom";
 import Modal from "react-modal";
-import songsData from "../../../../fixtures/songs";
+//import songsData from "../../../../fixtures/songs";
 import { useUserContext } from "../../../../context/UserContext";
-import config from "../../../../config";
 
 function ViewListeningHistory(props) {
-  const [form, setForm] = useState({
+  //const [form, setForm] = useState({
+  /*const [setForm] = useState({
     viewFromSpotify: true,
     viewFromMySpotifyData: false,
-  });
+  });*/
   const [results, setResults] = useState([]);
-  const [filters, setFilters] = useState({});
+  //const [filters, setFilters] = useState({});
   const { path, url } = useRouteMatch();
   const { user } = useUserContext();
   const history = useHistory();
@@ -31,12 +31,12 @@ function ViewListeningHistory(props) {
     history.push("/dashboard/view-listening-history");
   };
 
-  const onSubmit = async (e) => {
+  /*const onSubmit = async (e) => {
     e.preventDefault();
     console.log("on submit", form);
-  };
+  };*/
 
-  const onFieldChange = (e) => {
+  /*const onFieldChange = (e) => {
     const { name, checked } = e.target;
     console.log({ name, checked });
     setForm((formState) => {
@@ -46,7 +46,7 @@ function ViewListeningHistory(props) {
         [name]: checked,
       };
     });
-  };
+  };*/
 
   const fetchHistory = async () => {
     try {
@@ -71,6 +71,7 @@ function ViewListeningHistory(props) {
 
   useEffect(() => {
     fetchHistory();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -80,9 +81,9 @@ function ViewListeningHistory(props) {
         <h1>View Listening History</h1>
       </header>
 
-      <main className={styles.mainContent} role="view-listening-history">
+      <main className={styles.mainContent} role="textbox">
         <section className={styles.searchResultsContainer}>
-          <SearchResults results={results} />
+          <SearchResults role="textbox" results={results} />
         </section>
         {/* TODO: To implement in the future
         <aside className={styles.filtersAside}>

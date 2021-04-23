@@ -84,7 +84,7 @@ function SearchMySongs(props) {
       </header>
 
       <main>
-        <form className={styles.mainContent} role="search-songs">
+        <form className={styles.mainContent} role="search">
           <section className={styles.searchResultsContainer}>
             <SearchResults results={results} />
           </section>

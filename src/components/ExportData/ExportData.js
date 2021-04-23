@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from "react";
-import { JsonToCsv, useJsonToCsv } from "react-json-csv";
+import React, { useState } from "react";
+import { useJsonToCsv } from "react-json-csv";
 import { useUserContext } from "../../context/UserContext";
 import { apiStatus } from "../../constants";
 import styles from "./exportData.module.css";
-import config from "../../config";
 const { IDLE, PENDING, SUCCESS, ERROR } = apiStatus;
 
 const ExportData = () => {
@@ -39,21 +38,11 @@ const ExportData = () => {
       const firstRow = data.rows[0];
       console.log({ firstRow });
 
-      // TODO: Fix data.rows export to csv
-      //data: [{ track_name: "Best of You", playlist_name: "Foo Fighters" }],
       saveAsCsv({
         data: data.rows,
         fields: { track_name: "track_name", playlist_name: "playlist_name" },
         filename: "Playlist tracks",
       });
-
-      /*<JsonToCsv
-        data={data.rows}
-        filename={"Playlist tracks"}
-        fields={("track_name", "playlist_name")}
-        style=""
-        text={"Convert Json to Csv"}
-      />;*/
     } catch (error) {
       console.error(error);
       setSyncStatus(ERROR);

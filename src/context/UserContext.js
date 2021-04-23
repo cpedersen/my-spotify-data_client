@@ -4,7 +4,6 @@ import { contextFactory } from "./helpers/contextFactory";
 import { useURLParams } from "../hooks";
 import spotify from "../services/spotify";
 import { withAsync } from "../helpers";
-import config from "../config";
 
 console.log({ spotify });
 const [useUserContext, UserContext] = contextFactory();
@@ -74,20 +73,8 @@ const UserContextProvider = (props) => {
    * After the login, send an API request
    * The endpoint should check if the user already exists
    * If it doesn't exist, create one
-   */
-
-  /**
    * Sync spotify data
-   * Put it in the databse
-   
-
-   *
-   * insert into
-   * tracks (spotify_user, track_name, track_id, track_href, track_uri, track_url, artist, album, release_date)
-   * values (tbd);
-   *
-   *
-   * Get the playlists and tracks - See SearchMyPlaylists.js logic
+   * Put data in the databse
    */
 
   const createSyncUser = async ({ id, access_token }) => {
@@ -140,6 +127,7 @@ const UserContextProvider = (props) => {
 
       setInitialized(true);
     })();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const logout = (redirect = false) => {
@@ -158,10 +146,16 @@ const UserContextProvider = (props) => {
     const userData = data || user;
     const { refresh_token } = userData;
     // Refresh the token
-    const { response, error } = await withAsync(() =>
+    // TODO - need error here?
+    //const { response, error } = await withAsync(() =>
+    const { response } = await withAsync(() =>
       fetch(
         `${process.env.REACT_APP_BASE_URL}/refresh_token?refresh_token=${refresh_token}`
-      ).then((res) => res.json())
+      )
+        .then((res) => res.json())
+        .catch((err) => {
+          console.error("Error: ", err);
+        })
     );
 
     const { access_token } = response || {};
@@ -195,6 +189,7 @@ const UserContextProvider = (props) => {
       logout,
       refreshToken,
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [user]);
 
   return (

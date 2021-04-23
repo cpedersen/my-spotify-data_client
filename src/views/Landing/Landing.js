@@ -1,26 +1,17 @@
-//import { Link } from "react-router-dom";
 import Nav from "../../components/Nav/Nav";
-import { useHistory } from "react-router-dom";
 import styles from "./landing.module.css";
-import config from "../../config";
 
 function Landing(props) {
-  const history = useHistory();
-
-  const onLogIn = () => {
-    // history.push("/dashboard/search-playlists");
-  };
-
   return (
     <>
       <Nav />
-      <main role="login">
+      <main role="textbox">
         <header role="banner">
           <h1 className="title-main">My Spotify Data</h1>
         </header>
         <section className="container">
           <ul className="list">
-            <li>
+            <li className="color1">
               Ever wonder if a particular song is in any of your playlists?
               <p>Click 'Search My Playlists'</p>
             </li>
@@ -31,12 +22,12 @@ function Landing(props) {
               <p>Click 'Search My Songs'</p>
             </li>
             */}
-            <li>
+            <li className="color2">
               Want a way to view your song listening history?{" "}
               <p>Click 'View Listening History'</p>
             </li>
 
-            <li>
+            <li className="color3">
               Afraid of losing song lists you spent hours compiling?
               <p>Click 'Manage Data'</p>
             </li>
@@ -48,6 +39,7 @@ function Landing(props) {
             </p>
             <p>Log into Spotify now to get started...</p>
             <a
+              role="navigation"
               href={`${process.env.REACT_APP_BASE_URL}/login`}
               aria-label="Login with Spotify credentials"
               className={styles.buttonStyle}
@@ -57,7 +49,7 @@ function Landing(props) {
           </section>
         </section>
       </main>
-      <footer role="content-info"></footer> 
+      <footer></footer> 
     </>
   );
 }

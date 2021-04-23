@@ -1,3 +1,5 @@
+/*This file is kept for debug purposes:
+
 export default {
   data: [
     {
@@ -30,3 +32,4 @@ export default {
     },
   ],
 };
+*/

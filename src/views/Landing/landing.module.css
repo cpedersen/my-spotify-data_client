@@ -11,3 +11,21 @@ li {
   padding: 6px;
   margin: 6px;
 }
+
+.container {
+  /*
+  background-image: url("../../images/sharon-mccutcheon-jYbKxinWQGk-unsplash.jpg");
+  */
+}
+
+.color1 {
+  background-color: palevioletred;
+}
+
+.color2 {
+  background-color: paleturquoise;
+}
+
+.color3 {
+  background-color: palegoldenrod;
+}

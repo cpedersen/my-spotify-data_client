@@ -5,11 +5,11 @@ header {
 section {
   min-height: 200px;
   padding: 6% 0;
-  background-color: #bbb;
+  /*background-color: #bbb;*/
 }
 
 section:nth-child(even) {
-  background-color: #ddd;
+  /*background-color: #ddd;*/
 }
 
 .title-main {
@@ -31,5 +31,5 @@ li {
 }
 
 li:nth-child(odd) {
-  background: #eee;
+  /*background: #eee;*/
 }

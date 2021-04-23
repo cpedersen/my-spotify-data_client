@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import styles from "./filters.module.css";
 
 const Filters = (props) => {
@@ -22,7 +22,7 @@ const Filters = (props) => {
     return props;
   };*/
   return (
-    <form role="filter" className="search-criteria-form" onSubmit={onSearch}>
+    <form role="search" className="search-criteria-form" onSubmit={onSearch}>
       <label htmlFor="acousticness">Acousticness</label>
       <input
         type="range"

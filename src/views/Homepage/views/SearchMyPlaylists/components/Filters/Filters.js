@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./filters.module.css";
 
 const Filters = (props) => {
-  const { filters, setFilters } = props;
+  //const { filters, setFilters } = props;
   return (
     <section role="filter">
       <div className="filterOption">
