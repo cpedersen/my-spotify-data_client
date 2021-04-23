@@ -5,7 +5,7 @@ import { useURLParams } from "../hooks";
 import spotify from "../services/spotify";
 import { withAsync } from "../helpers";
 
-console.log({ spotify });
+//console.log({ spotify });
 const [useUserContext, UserContext] = contextFactory();
 const [useUserActionsContext, UserActionsContext] = contextFactory();
 
@@ -78,7 +78,7 @@ const UserContextProvider = (props) => {
    */
 
   const createSyncUser = async ({ id, access_token }) => {
-    console.log("create user", id);
+    //console.log("create user", id);
     try {
       const response = await fetch(
         `${process.env.REACT_APP_BASE_URL}/api/users`,
@@ -93,7 +93,6 @@ const UserContextProvider = (props) => {
           },
         }
       );
-
       console.log({ response });
     } catch (error) {
       console.error(error);
@@ -154,7 +153,7 @@ const UserContextProvider = (props) => {
       )
         .then((res) => res.json())
         .catch((err) => {
-          console.error("Error: ", err);
+          console.error(err);
         })
     );
 

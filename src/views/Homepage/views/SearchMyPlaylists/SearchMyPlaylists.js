@@ -33,11 +33,11 @@ function SearchMyPlaylists(props) {
 
   const onSearch = async (e) => {
     e?.preventDefault();
-    console.log({
+    /*console.log({
       query,
       searchBy,
       user,
-    });
+    });*/
     // Perform api request to search
     // const results = searchApi.search()
 
@@ -55,7 +55,7 @@ function SearchMyPlaylists(props) {
       ).then((res) => res.json())
     );
 
-    console.log({ response, error });
+    //console.log({ response, error });
     if (error) {
       console.error(error);
       return;

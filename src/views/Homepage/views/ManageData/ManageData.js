@@ -39,10 +39,9 @@ const ManageData = (props) => {
 
   const onSubmit = async (e) => {
     e.preventDefault();
-    console.log("on submit", form);
+    //console.log("on submit", form);
   };
 
-  // TODO - use action?
   return (
     <main className={styles.container}>
       <header role="banner">
@@ -79,7 +78,7 @@ const ManageData = (props) => {
         </div>
         */}
 
-        {/* TODO: Not sure if I need a form and a Submit button
+        {/* 
         <br />
         <section className={styles.buttonSection}>
           <button className={styles.buttonStyle} type="submit">

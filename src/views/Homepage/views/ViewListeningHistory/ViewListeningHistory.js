@@ -62,7 +62,7 @@ function ViewListeningHistory(props) {
       );
       console.log({ response });
       const data = await response.json();
-      console.log({ data, items: data.response.body.items });
+      //console.log({ data, items: data.response.body.items });
       setResults(data.response.body.items);
     } catch (error) {
       console.error(error);
@@ -85,7 +85,7 @@ function ViewListeningHistory(props) {
         <section className={styles.searchResultsContainer}>
           <SearchResults role="textbox" results={results} />
         </section>
-        {/* TODO: To implement in the future
+        {/* TODO: To implement appended listening history in the future
         <aside className={styles.filtersAside}>
           <Filters
             filters={filters}

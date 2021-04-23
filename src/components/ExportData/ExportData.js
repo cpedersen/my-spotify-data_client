@@ -10,7 +10,7 @@ const ExportData = () => {
   const { user } = useUserContext();
   const { saveAsCsv } = useJsonToCsv();
   const { id, access_token } = user;
-  console.log({ access_token, id });
+  //console.log({ access_token, id });
   const getData = async () => {
     try {
       setSyncStatus(PENDING);
@@ -25,18 +25,18 @@ const ExportData = () => {
         }
       );
       const data = await response.json();
-      console.log("data: ", data);
+      //console.log("data: ", data);
 
       setSyncStatus(SUCCESS);
 
-      const numRows = data.rows.length;
-      console.log("numRows: ", numRows);
+      //const numRows = data.rows.length;
+      //console.log("numRows: ", numRows);
 
-      const typeObj = typeof data.rows;
-      console.log("typeof: ", typeObj);
+      //const typeObj = typeof data.rows;
+      //console.log("typeof: ", typeObj);
 
-      const firstRow = data.rows[0];
-      console.log({ firstRow });
+      //const firstRow = data.rows[0];
+      //console.log({ firstRow });
 
       saveAsCsv({
         data: data.rows,

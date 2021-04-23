@@ -8,7 +8,7 @@ const SyncData = () => {
   const [syncStatus, setSyncStatus] = useState(IDLE);
   const { user } = useUserContext();
   const { id, access_token } = user;
-  console.log({ access_token, id });
+  //console.log({ access_token, id });
   const syncData = async () => {
     try {
       setSyncStatus(PENDING);

@@ -9,7 +9,7 @@ import { SearchMySongs } from "./views/SearchMySongs";
 import { ViewListeningHistory } from "./views/ViewListeningHistory";
 
 function Homepage(props) {
-  console.log({ props });
+  //console.log({ props });
   const { path } = props.match;
   return (
     <>

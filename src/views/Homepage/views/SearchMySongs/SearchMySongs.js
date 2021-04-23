@@ -39,7 +39,7 @@ function SearchMySongs(props) {
 
   const onSearch = (e) => {
     e.preventDefault();
-    console.log({});
+    //console.log({});
     // Perform api request to search
     // const results = searchApi.search()
   };
@@ -47,10 +47,10 @@ function SearchMySongs(props) {
   const updateFilterForm = (e) => {
     // e.preventDefault();
     const { name, value } = e.target;
-    console.log({
+    /*console.log({
       name,
       value,
-    });
+    });*/
     setFilters({
       ...filters,
       [name]: value,
