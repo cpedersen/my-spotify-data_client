@@ -63,7 +63,7 @@ ul ul li:nth-child(odd) {
 }
 
 li:nth-child(odd) {
-  background: #eee;
+  /* background: #eee; */
 }
 
 .list {

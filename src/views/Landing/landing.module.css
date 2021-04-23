@@ -29,3 +29,20 @@ li {
 .color3 {
   background-color: palegoldenrod;
 }
+
+.spotifyButton {
+  text-decoration: none;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 5px;
+  padding: 10px 15px;
+  font-size: 32px;
+  color: #333;
+  box-shadow: 0 1px 1px -1px #666;
+  background: url(../../images/background.jpg);
+  background-size: cover;
+}
+
+.spotifyButton svg {
+  background: white;
+  border-radius: 50%;
+}

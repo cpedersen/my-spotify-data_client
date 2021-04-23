@@ -11,6 +11,10 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }*/
+@import "variables";
+
+/* Cinzel */
+@import url("https://fonts.googleapis.com/css2?family=Cinzel&family=Cinzel+Decorative:wght@400;700&display=swap");
 
 * {
   box-sizing: border-box;
@@ -19,8 +23,11 @@ code {
 body {
   font-family: "Open Sans", sans-serif;
   font-size: 20px;
-  color: #444;
+  /*color: #444;*/
   text-align: center;
   line-height: 1.5;
   margin: 0;
+  padding-top: calc(6% + 64px);
+  background: url(./images/background.jpg);
+  background-size: 100vw 100vh;
 }

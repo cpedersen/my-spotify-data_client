@@ -1,19 +1,36 @@
-.navContainer {
-  display: flex;
-  flex-wrap: wrap;
+.header {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 10;
+  background-color: var(--green);
+}
+.navContainer {
+  display: flex; /* alt + arrow up/down */
+  display: flex; /* alt + shift + arrow up/down */
+  padding: 3%;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-content: right;
-  padding: 3%;
-  background-color: #aaa;
+  color: var(--white);
+  line-height: 35px;
+}
+
+.topNavContainer {
+  text-align: right;
+  font-size: 14px;
+  font-weight: 300;
+  padding: 4px;
+  letter-spacing: 0.5px;
 }
 /*
 .nav-items {
 }*/
+
+.title {
+  margin: 0 auto 0 0;
+}
 
 .navContainer {
 }

@@ -15,9 +15,9 @@ function Homepage(props) {
     <>
       <Navigation />
       <main>
-        <header role="banner">
+        {/* <header role="banner">
           <h1 className={styles.title}>My Spotify Data</h1>
-        </header>
+        </header> */}
         <section className={styles.container}>
           <nav className={styles.list}>
             <NavLink

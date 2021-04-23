@@ -5,25 +5,33 @@ import {
   useUserActionsContext,
 } from "../../context/UserContext";
 
-function Nav(props) {
-  const { isAuthenticated } = useUserContext();
+function Nav({ hideLogo = false }) {
+  const { user, isAuthenticated } = useUserContext();
   const { logout } = useUserActionsContext();
+
   return (
     <>
-      <nav className={styles.navContainer} role="navigation">
-        <div className="login">
-          {isAuthenticated ? (
-            <Link to="/" onClick={logout}>
-              Log out
-            </Link>
-          ) : (
-            <Link to="/"></Link>
-          )}
-        </div>
-        <div className={styles.about}>
-          <Link to="/about">About</Link>
-        </div>
-      </nav>
+      <header className={styles.header}>
+        <nav className={styles.topNavContainer} role="navigation">
+          {isAuthenticated && `Username: ${user.id}`}
+          &nbsp;
+        </nav>
+        <nav className={styles.navContainer} role="navigation">
+          {!hideLogo && <h1 className={styles.title}>My Spotify Data</h1>}
+          <div className="login">
+            {isAuthenticated ? (
+              <Link to="/" onClick={logout}>
+                Log out
+              </Link>
+            ) : (
+              <Link to="/"></Link>
+            )}
+          </div>
+          <div className={styles.about}>
+            <Link to="/about">About</Link>
+          </div>
+        </nav>
+      </header>
     </>
   );
 }

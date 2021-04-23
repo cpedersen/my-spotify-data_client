@@ -1,10 +1,13 @@
 import Nav from "../../components/Nav/Nav";
 import styles from "./landing.module.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSpotify } from "@fortawesome/free-brands-svg-icons";
+const SpotifyIcon = <FontAwesomeIcon icon={faSpotify} />;
 
 function Landing(props) {
   return (
     <>
-      <Nav />
+      <Nav hideLogo={true} />
       <main role="textbox">
         <header role="banner">
           <h1 className="title-main">My Spotify Data</h1>
@@ -13,7 +16,7 @@ function Landing(props) {
           <ul className="list">
             <li className="color1">
               Ever wonder if a particular song is in any of your playlists?
-              <p>Click 'Search My Playlists'</p>
+              {/*<p>Click 'Search My Playlists'</p>*/}
             </li>
             {/*
             <li>
@@ -24,27 +27,28 @@ function Landing(props) {
             */}
             <li className="color2">
               Want a way to view your song listening history?{" "}
-              <p>Click 'View Listening History'</p>
+              {/*<p>Click 'View Listening History'</p>*/}
             </li>
 
             <li className="color3">
               Afraid of losing song lists you spent hours compiling?
-              <p>Click 'Manage Data'</p>
+              {/*<p>Click 'Manage Data'</p>*/}
             </li>
           </ul>
           <section className="login-block">
             <p>
-              Use 't9dgdc5lr7uxj9eja1yze5i1m' for the login and 'Thinkful2021!'
-              for the password.
+              Try it out! Use 't9dgdc5lr7uxj9eja1yze5i1m' for the Spotify login
+              and 'Thinkful2021!' for the password.
             </p>
-            <p>Log into Spotify now to get started...</p>
+            {/*<p>Log into Spotify now to get started...</p>*/}
+            <p>Click the button below to get started...</p>
             <a
+              className={styles.spotifyButton}
               role="navigation"
               href={`${process.env.REACT_APP_BASE_URL}/login`}
               aria-label="Login with Spotify credentials"
-              className={styles.buttonStyle}
             >
-              Go for it
+              {SpotifyIcon} Go for it
             </a>
           </section>
         </section>
