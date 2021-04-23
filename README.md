@@ -17,22 +17,22 @@ https://my-spotify-data-client.vercel.app
 
 The landing page gives you an overview of the application and allows you to log in using either your own Spotify credentials or a test user's credentials. A link to About help is provided for additional information about the app.
 
-![Alt text](./images/LandingPage.jpg?raw=true "LandingPage")
+![Alt text](./src/images/LandingPage.jpg?raw=true "LandingPage")
 
 ## Search My Playlists
 
 The Search My Playlists screen enables you to search your playlists to find where you have saved a particular song. Two filter options are provided: 1) text option, 2) Spotify URL option.
 
-![Alt text](./images/SearchMyPlaylists.jpg?raw=true "SearchMyPlaylists")
+![Alt text](./src/images/SearchMyPlaylists.jpg?raw=true "SearchMyPlaylists")
 
 ## View Listening History
 
 The View Listening History screen provides a display of the most recent songs you have listened to (up to a max of 50).
 
-![Alt text](./images/ViewListeningHistory.jpg?raw=true "ViewListeningHistory")
+![Alt text](./src/images/ViewListeningHistory.jpg?raw=true "ViewListeningHistory")
 
 ## Manage Data
 
 The Manage Data screen enables you to sync data after you are already logged into the app. It also enables you to export your song data to a csv file.
 
-![Alt text](./images/ManageData.jpg?raw=true "ManageData")
+![Alt text](./src/images/ManageData.jpg?raw=true "ManageData")
