@@ -59,10 +59,10 @@ function ViewListeningHistory(props) {
           },
         }
       );
-      console.log({ response });
+      //console.log({ response });
       const data = await response.json();
       //console.log({ data, items: data.response.body.items });
-      console.log({ data });
+      //console.log({ data });
       setResults(data.response.body.items);
     } catch (error) {
       console.error(error);

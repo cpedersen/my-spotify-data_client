@@ -1,0 +1,39 @@
+:root {
+  --transparent-white: rgba(255, 255, 255, 0.5);
+}
+
+.table {
+  width: 100%;
+  max-width: 960px;
+  margin: 20px auto;
+}
+
+@media screen and (min-width: 768px) {
+  .table {
+    display: block;
+  }
+}
+
+.table th {
+  width: 33%;
+  font-family: Roboto;
+  font-size: 1.2em;
+  font-weight: 600;
+  /* background: var(--green); */
+
+  color: white;
+  text-shadow: 1px 1px 2px #444;
+  padding: 7px;
+}
+
+.table td {
+  padding: 5px;
+  border-bottom: 1px solid rgba(50, 50, 50, 0.1);
+  transition: 0.5s;
+}
+.table tr:hover td {
+  background: var(--transparent-white);
+}
+.table /*tr:nth-child(even)*/ td {
+  background-image: linear-gradient(transparent, var(--transparent-white));
+}
