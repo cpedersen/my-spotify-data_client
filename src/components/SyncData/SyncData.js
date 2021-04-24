@@ -40,7 +40,11 @@ const SyncData = () => {
           ? "There was a problem while syncing. Please try again."
           : null}
       </div>
-      <button onClick={syncData} disabled={syncStatus === PENDING}>
+      <button
+        className={styles.button}
+        onClick={syncData}
+        disabled={syncStatus === PENDING}
+      >
         {syncStatus === PENDING ? "Syncing..." : "Sync data"}
       </button>
     </>

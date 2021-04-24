@@ -12,9 +12,7 @@ h1 {
 }
 
 section {
-  /*min-height: 200px;*/
   padding: 0 0;
-  /* background-color: #bbb; */
   color: black;
 }
 
@@ -105,4 +103,8 @@ input {
 .helpText {
   font-size: medium;
   text-align: left;
+}
+
+.div {
+  margin: 16px 0px 16px 0px;
 }

@@ -57,7 +57,11 @@ const ExportData = () => {
           : null}
       </div>
 
-      <button onClick={getData} disabled={syncStatus === PENDING}>
+      <button
+        className={styles.button}
+        onClick={getData}
+        disabled={syncStatus === PENDING}
+      >
         {syncStatus === PENDING ? "Downloading..." : "Download data"}
       </button>
     </>

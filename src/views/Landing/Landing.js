@@ -35,13 +35,15 @@ function Landing(props) {
               {/*<p>Click 'Manage Data'</p>*/}
             </li>
           </ul>
-          <section className="login-block">
-            <p>
+          <section className={styles.loginBlock}>
+            <p className={styles.paragraph}>
               Try it out! Use 't9dgdc5lr7uxj9eja1yze5i1m' for the Spotify login
               and 'Thinkful2021!' for the password.
             </p>
             {/*<p>Log into Spotify now to get started...</p>*/}
-            <p>Click the button below to get started...</p>
+            <p className={styles.paragraph}>
+              Click the button below to get started...
+            </p>
             <a
               className={styles.spotifyButton}
               role="navigation"

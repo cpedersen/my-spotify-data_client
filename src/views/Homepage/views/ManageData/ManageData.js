@@ -47,9 +47,13 @@ const ManageData = (props) => {
       <header role="banner">
         <h1>Manage Data</h1>
       </header>
-      <SyncData /> Back up your latest Spotify data to My Spotify Data DB.
-      <br />
-      <ExportData /> Export your data from the My Spotify Data database.
+      <div className={styles.div}>
+        <SyncData /> Back up your latest Spotify data to the My Spotify Data
+        database.
+      </div>
+      <div className={styles.div}>
+        <ExportData /> Export your data from the My Spotify Data database.
+      </div>
       <form onSubmit={onSubmit}>
         {/*
         <div className={styles.flex}>
@@ -100,7 +104,7 @@ const ManageData = (props) => {
           >
             <div className={styles.helpText}>
               Use Manage Data to view the latest Spotify changes to your
-              account, or to export your songs and playlists to a csv file in
+              account, or to export your songs and playlists to a CSV file in
               the Downloads directory of your computer.
             </div>
           </Modal>

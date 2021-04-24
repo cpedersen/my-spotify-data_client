@@ -1,17 +1,13 @@
 import React from "react";
-//import { useHistory } from "react-router-dom";
 import styles from "./about.module.css";
 
 const About = (props) => {
-  //let history = useHistory();
-  //console.log("props ", props);
-  //console.log("history ", history);
   return (
     <section className={styles.container}>
       <button
         role="navigation"
         onClick={() => props.history.goBack()}
-        className="link"
+        className={styles.button}
       >
         Go back...
       </button>

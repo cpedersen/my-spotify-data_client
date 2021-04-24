@@ -14,7 +14,7 @@ function Nav({ hideLogo = false }) {
       <header className={styles.header}>
         {isAuthenticated && (
           <nav className={styles.topNavContainer} role="navigation">
-            Username: ${user.id}
+            Username: {user.id}
           </nav>
         )}
         <nav className={styles.navContainer} role="navigation">

@@ -108,8 +108,8 @@ function ViewListeningHistory(props) {
             style={{ overlay: { zIndex: 20 } }}
           >
             <div className={styles.helpText}>
-              Use View listening History to see when you listened to the last 50
-              songs you played on Spotify.
+              Use View Listening History to display the last 50 songs that you
+              played on Spotify.
             </div>
           </Modal>
         </Route>
