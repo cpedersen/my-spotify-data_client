@@ -54,7 +54,7 @@ function SearchMyPlaylists(props) {
       ).then((res) => res.json())
     );
 
-    console.log({ response, error });
+    console.debug({ response, error });
     if (error) {
       console.error(error);
       return;

@@ -25,7 +25,7 @@ const SyncData = () => {
           },
         }
       );
-      console.log({ response });
+      console.debug({ response });
       setSyncStatus(SUCCESS);
     } catch (error) {
       console.error(error);

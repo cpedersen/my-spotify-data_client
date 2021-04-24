@@ -59,7 +59,7 @@ function ViewListeningHistory(props) {
           },
         }
       );
-      //console.log({ response });
+      console.debug({ response });
       const data = await response.json();
       //console.log({ data, items: data.response.body.items });
       //console.log({ data });
