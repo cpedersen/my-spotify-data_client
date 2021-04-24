@@ -1,11 +1,69 @@
 :root {
   --transparent-white: rgba(255, 255, 255, 0.5);
 }
+
+.mobileResults {
+  margin: 2rem 1.5rem;
+}
+
+.mobileResultItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.mobileResultItem:not(:last-child) {
+  margin-bottom: 1rem;
+}
+
+.mobileTrackName {
+  font-weight: bold;
+}
+
+.mobileTrackInfo {
+  text-align: left;
+}
+
+.mobilePlaylistName {
+  font-style: italic;
+  flex-shrink: 0;
+  padding-left: 2rem;
+}
+
+@media screen and (max-width: 400px) {
+  .mobileResultItem {
+    flex-direction: column;
+    align-items: flex-start;
+    border-bottom: 1px solid #aaa;
+    padding-bottom: 0.75rem;
+  }
+
+  .mobileResultItem:not(:last-child) {
+    margin-bottom: 0.75rem;
+  }
+
+  .mobilePlaylistName {
+    padding: 0.25rem 0 0 0;
+  }
+}
+
 .table {
   width: 100%;
   max-width: 960px;
   margin: 20px auto;
+  display: none;
 }
+
+@media screen and (min-width: 768px) {
+  .table {
+    display: block;
+  }
+
+  .mobileResults {
+    display: none;
+  }
+}
+
 .table th {
   width: 33%;
   font-family: Roboto;

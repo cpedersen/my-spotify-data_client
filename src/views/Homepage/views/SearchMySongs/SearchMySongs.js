@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import React from "react";
 import styles from "./searchMySongs.module.css";
-import Nav from "../../../../components/Nav/Nav";
 import { Filters } from "./components/Filters";
 import { SearchResults } from "./components/SearchResults";
 import {
@@ -78,7 +77,6 @@ function SearchMySongs(props) {
 
   return (
     <>
-      <Nav />
       <header role="banner">
         <h1>Search My Songs</h1>
       </header>

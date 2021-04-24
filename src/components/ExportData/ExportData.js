@@ -39,7 +39,10 @@ const ExportData = () => {
       //console.log({ firstRow });
 
       saveAsCsv({
-        data: data.rows,
+        data: data.rows.map(({ track_name, playlist_name }) => ({
+          track_name: `"${track_name}"`,
+          playlist_name,
+        })),
         fields: { track_name: "track_name", playlist_name: "playlist_name" },
         filename: "Playlist tracks",
       });

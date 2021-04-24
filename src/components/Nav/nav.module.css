@@ -8,13 +8,13 @@
 }
 .navContainer {
   display: flex; /* alt + arrow up/down */
-  display: flex; /* alt + shift + arrow up/down */
   padding: 2% 3%;
   flex-wrap: wrap;
   justify-content: space-between;
   align-content: right;
   color: var(--white);
   line-height: 35px;
+  flex-wrap: wrap;
 }
 
 .navContainer a {
@@ -43,7 +43,11 @@
   font-family: "Cinzel Decorative";
 }
 
-.navContainer {
+@media screen and (max-width: 768px) {
+  .title {
+    font-size: 1.25rem;
+    flex-basis: 100%;
+  }
 }
 
 /*

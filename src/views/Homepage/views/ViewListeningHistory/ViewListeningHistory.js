@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import React from "react";
 import styles from "./viewListeningHistory.module.css";
-import Nav from "../../../../components/Nav/Nav";
 //import { Filters } from "./components/Filters";
 import { SearchResults } from "./components/SearchResults";
 import {
@@ -77,7 +76,6 @@ function ViewListeningHistory(props) {
 
   return (
     <>
-      <Nav />
       <header role="banner">
         <h1>View Listening History</h1>
       </header>

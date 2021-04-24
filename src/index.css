@@ -33,3 +33,9 @@ body {
   background: url(./images/background.jpg);
   background-size: 100vw 100vh;
 }
+
+@media screen and (max-width: 768px) {
+  body {
+    padding-top: calc(4% + 120px);
+  }
+}
