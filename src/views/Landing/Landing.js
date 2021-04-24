@@ -37,7 +37,7 @@ function Landing(props) {
           </ul>
           <section className={styles.loginBlock}>
             <p className={styles.paragraph}>
-              Try it out! When you enter your user credentials, you are
+              Try it out! When you enter your Spotify user credentials, you are
               redirected to Spotify's official login. Your password is not saved
               to the My Spotify Data database.
             </p>
