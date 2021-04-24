@@ -10,11 +10,11 @@ function Landing(props) {
       <Nav hideLogo={true} />
       <main role="textbox">
         <header role="banner">
-          <h1 className="title-main">My Spotify Data</h1>
+          <h1 className={styles.titleMain}>My Spotify Data</h1>
         </header>
         <section className="container">
-          <ul className="list">
-            <li className="color1">
+          <ul>
+            <li className={styles.color1}>
               Ever wonder if a particular song is in any of your playlists?
               {/*<p>Click 'Search My Playlists'</p>*/}
             </li>
@@ -25,12 +25,12 @@ function Landing(props) {
               <p>Click 'Search My Songs'</p>
             </li>
             */}
-            <li className="color2">
+            <li className={styles.color2}>
               Want a way to view your song listening history?{" "}
               {/*<p>Click 'View Listening History'</p>*/}
             </li>
 
-            <li className="color3">
+            <li className={styles.color3}>
               Afraid of losing song lists you spent hours compiling?
               {/*<p>Click 'Manage Data'</p>*/}
             </li>

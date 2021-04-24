@@ -2,6 +2,31 @@
   background-color: white;
 }
 
+.inputField,
+.selectField,
+.submit {
+  font-family: Roboto;
+  padding: 7px;
+  margin-top: 10px;
+  width: 200px;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.submit {
+  transition: 0.5s;
+  cursor: pointer;
+  outline: 0;
+}
+
+.submit:hover {
+  box-shadow: 0 2px 2px -1px #999;
+}
+.submit:active {
+  box-shadow: 0 2px 2px -1px inset #999;
+}
+
 .inputField {
   font-size: 16px;
 }

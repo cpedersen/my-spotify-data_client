@@ -1,4 +1,4 @@
-import React from "react";
+/*import React from "react";
 
 const SearchResults = (props) => {
   const { results } = props;
@@ -13,4 +13,4 @@ const SearchResults = (props) => {
   );
 };
 
-export default SearchResults;
+export default SearchResults;*/

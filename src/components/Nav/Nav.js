@@ -12,10 +12,11 @@ function Nav({ hideLogo = false }) {
   return (
     <>
       <header className={styles.header}>
-        <nav className={styles.topNavContainer} role="navigation">
-          {isAuthenticated && `Username: ${user.id}`}
-          &nbsp;
-        </nav>
+        {isAuthenticated && (
+          <nav className={styles.topNavContainer} role="navigation">
+            Username: ${user.id}
+          </nav>
+        )}
         <nav className={styles.navContainer} role="navigation">
           {!hideLogo && <h1 className={styles.title}>My Spotify Data</h1>}
           <div className="login">

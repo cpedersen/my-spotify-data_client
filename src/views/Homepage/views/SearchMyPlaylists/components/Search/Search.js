@@ -25,7 +25,7 @@ const Search = (props) => {
         </select>
       </div>
       <div className="">
-        <button type="submit" onClick={onSearch}>
+        <button type="submit" onClick={onSearch} className={styles.submit}>
           Search
         </button>
       </div>

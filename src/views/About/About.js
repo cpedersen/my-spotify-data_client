@@ -18,8 +18,8 @@ const About = (props) => {
       <div role="textbox" className={styles.helpSection}>
         <h1 className={styles.header1}>General Help</h1>
         <p>
-          The My Spotify Data app provides a way for users to search for songs
-          in their playlists, functionality not provided by Spotify's user
+          The My Spotify Data application provides a way for users to search for
+          songs in their playlists, functionality not provided by Spotify's user
           interface. In addition, My Spotify Data displays the user's listening
           history and creates a CSV file containing the user's playlists and
           songs. In this way, the user can always be assured that they have a

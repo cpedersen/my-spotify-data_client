@@ -7,9 +7,27 @@
   margin: 0 0 6px 0;
 }
 
-li {
+.titleMain {
+  margin: 10px 0;
+  text-align: center;
+  font-family: "Cinzel Decorative";
+  color: white;
+  /*text-shadow: 0px 4px 6px #999;
+  text-shadow: 0px 2px 3px darkmagenta;*/
+  text-shadow: 0px 1px 2px #503;
+}
+
+.color1,
+.color2,
+.color3 {
   padding: 6px;
   margin: 6px;
+  font-family: "Cinzel";
+  list-style: none;
+  text-align: center;
+  /*padding: 50px 30px;*/
+  font-size: 1.4em;
+  color: black;
 }
 
 .container {
@@ -20,14 +38,17 @@ li {
 
 .color1 {
   background-color: palevioletred;
+  background-color: #f4b6d8;
 }
 
 .color2 {
   background-color: paleturquoise;
+  background-color: #b6b9f4;
 }
 
 .color3 {
   background-color: palegoldenrod;
+  background-color: #f4f1b6;
 }
 
 .spotifyButton {

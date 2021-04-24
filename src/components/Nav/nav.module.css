@@ -9,7 +9,7 @@
 .navContainer {
   display: flex; /* alt + arrow up/down */
   display: flex; /* alt + shift + arrow up/down */
-  padding: 3%;
+  padding: 2% 3%;
   flex-wrap: wrap;
   justify-content: space-between;
   align-content: right;
@@ -17,10 +17,20 @@
   line-height: 35px;
 }
 
+.navContainer a {
+  margin-left: 15px;
+}
+
+.navContainer h1,
+.navContainer a {
+  text-decoration: none;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+}
+
 .topNavContainer {
   text-align: right;
   font-size: 14px;
-  font-weight: 300;
   padding: 4px;
   letter-spacing: 0.5px;
 }
@@ -30,6 +40,7 @@
 
 .title {
   margin: 0 auto 0 0;
+  font-family: "Cinzel Decorative";
 }
 
 .navContainer {

@@ -15,19 +15,21 @@ code {
 
 /* Cinzel */
 @import url("https://fonts.googleapis.com/css2?family=Cinzel&family=Cinzel+Decorative:wght@400;700&display=swap");
+/* Roboto */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap");
 
 * {
   box-sizing: border-box;
 }
 
 body {
-  font-family: "Open Sans", sans-serif;
+  font-family: Roboto, sans-serif;
   font-size: 20px;
   /*color: #444;*/
   text-align: center;
   line-height: 1.5;
   margin: 0;
-  padding-top: calc(6% + 64px);
+  padding-top: calc(4% + 64px);
   background: url(./images/background.jpg);
   background-size: 100vw 100vh;
 }
