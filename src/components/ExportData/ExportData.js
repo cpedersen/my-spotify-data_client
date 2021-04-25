@@ -5,6 +5,7 @@ import { apiStatus } from "../../constants";
 import styles from "./exportData.module.css";
 const { IDLE, PENDING, SUCCESS, ERROR } = apiStatus;
 
+// Export song data to csv file
 const ExportData = () => {
   const [syncStatus, setSyncStatus] = useState(IDLE);
   const { user } = useUserContext();
@@ -28,15 +29,6 @@ const ExportData = () => {
       //console.log("data: ", data);
 
       setSyncStatus(SUCCESS);
-
-      //const numRows = data.rows.length;
-      //console.log("numRows: ", numRows);
-
-      //const typeObj = typeof data.rows;
-      //console.log("typeof: ", typeObj);
-
-      //const firstRow = data.rows[0];
-      //console.log({ firstRow });
 
       saveAsCsv({
         data: data.rows.map(({ track_name, playlist_name }) => ({

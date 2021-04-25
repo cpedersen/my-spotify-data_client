@@ -6,8 +6,9 @@
   z-index: 10;
   background-color: var(--green);
 }
+
 .navContainer {
-  display: flex; /* alt + arrow up/down */
+  display: flex;
   padding: 2% 3%;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -34,13 +35,14 @@
   padding: 4px;
   letter-spacing: 0.5px;
 }
-/*
-.nav-items {
-}*/
 
 .title {
   margin: 0 auto 0 0;
   font-family: "Cinzel Decorative";
+}
+
+.about {
+  text-align: center;
 }
 
 @media screen and (max-width: 768px) {
@@ -49,32 +51,3 @@
     flex-basis: 100%;
   }
 }
-
-/*
-nav,
-footer {
-  padding: 3%;
-  background-color: #aaa;
-}
-
-nav {
-}
-
-.nav2 {
-  position: static;
-  margin-bottom: 50px;
-}
-*/
-
-.about {
-  text-align: center;
-}
-/*
-.help {
-  text-align: right;
-}
-
-.go-back {
-  text-align: centers;
-}
-*/
