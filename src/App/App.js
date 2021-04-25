@@ -4,6 +4,7 @@ import Homepage from "../views/Homepage/Homepage";
 import Landing from "../views/Landing/Landing";
 import About from "../views/About/About";
 import UserContextProvider from "../context/UserContext";
+
 function App() {
   return (
     <BrowserRouter>
