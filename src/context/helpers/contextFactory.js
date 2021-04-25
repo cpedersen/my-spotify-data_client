@@ -1,5 +1,6 @@
 import { createContext, useContext } from "react";
 
+// Needed to track the Spotify user
 export const contextFactory = () => {
   const context = createContext(undefined);
   const useCtx = () => {

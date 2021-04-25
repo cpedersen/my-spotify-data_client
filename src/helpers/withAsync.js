@@ -1,3 +1,4 @@
+// Search requires async processing
 export const withAsync = async (fn, ...args) => {
   try {
     const response = await fn(...args);

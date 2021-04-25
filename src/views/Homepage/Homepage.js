@@ -1,5 +1,3 @@
-// import React, { Component } from "react";
-//import { Link } from "react-router-dom";
 import styles from "./homepage.module.css";
 import Navigation from "../../components/Nav/Nav";
 import { NavLink, Switch, Route } from "react-router-dom";
@@ -9,15 +7,11 @@ import { SearchMySongs } from "./views/SearchMySongs";
 import { ViewListeningHistory } from "./views/ViewListeningHistory";
 
 function Homepage(props) {
-  //console.log({ props });
   const { path } = props.match;
   return (
     <>
       <Navigation />
       <main>
-        {/* <header role="banner">
-          <h1 className={styles.title}>My Spotify Data</h1>
-        </header> */}
         <section className={styles.container}>
           <nav className={styles.list}>
             <NavLink
@@ -28,7 +22,7 @@ function Homepage(props) {
               Search My Playlists
             </NavLink>
 
-            {/*
+            {/* TODO - I plan to implement this post-bootcamp
             <NavLink
               to={`${path}/search-songs`}
               className={styles.navLink}

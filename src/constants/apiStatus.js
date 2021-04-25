@@ -1,3 +1,4 @@
+// Used by ExportData and SyncData
 export const apiStatus = {
   IDLE: "IDLE",
   PENDING: "PENDING",

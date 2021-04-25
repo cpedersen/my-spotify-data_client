@@ -4,6 +4,8 @@ import { apiStatus } from "../../constants";
 import styles from "./syncData.module.css";
 const { IDLE, PENDING, SUCCESS, ERROR } = apiStatus;
 
+// Sync data is used when a user is already logged in and wants to
+// pull their most recent data from Spotify
 const SyncData = () => {
   const [syncStatus, setSyncStatus] = useState(IDLE);
   const { user } = useUserContext();

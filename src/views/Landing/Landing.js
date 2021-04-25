@@ -16,23 +16,19 @@ function Landing(props) {
           <ul>
             <li className={styles.color1}>
               Ever wonder if a particular song is in any of your playlists?
-              {/*<p>Click 'Search My Playlists'</p>*/}
             </li>
             {/*
             <li>
               Curious to explore interesting characteristics about your songs
               (e.g., danceability, energy, loudness)?
-              <p>Click 'Search My Songs'</p>
             </li>
             */}
             <li className={styles.color2}>
               Want a way to view your song listening history?{" "}
-              {/*<p>Click 'View Listening History'</p>*/}
             </li>
 
             <li className={styles.color3}>
               Afraid of losing song lists you spent hours compiling?
-              {/*<p>Click 'Manage Data'</p>*/}
             </li>
           </ul>
           <section className={styles.loginBlock}>
@@ -41,7 +37,6 @@ function Landing(props) {
               redirected to Spotify's official login. Your password is not saved
               to the My Spotify Data database.
             </p>
-            {/*<p>Log into Spotify now to get started...</p>*/}
             <p className={styles.paragraph}>
               Click the button below to get started...
             </p>

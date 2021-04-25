@@ -10,7 +10,6 @@
   color: black;
   font-size: small;
   height: 100%;
-  /*border: 0.2rem solid black;*/
 }
 
 .helpSection {
@@ -18,7 +17,6 @@
   padding: 2%;
   background-color: white;
   text-align: left;
-  /*border: 0.2rem solid black;*/
 }
 
 .button {

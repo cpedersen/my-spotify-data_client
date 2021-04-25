@@ -5,10 +5,11 @@ import { useURLParams } from "../hooks";
 import spotify from "../services/spotify";
 import { withAsync } from "../helpers";
 
-//console.log({ spotify });
 const [useUserContext, UserContext] = contextFactory();
 const [useUserActionsContext, UserActionsContext] = contextFactory();
 
+// Store the user information in context for global access;
+// this is required for token access and refresh
 const UserContextProvider = (props) => {
   const [user, setUser] = useState(null);
   const [initialized, setInitialized] = useState(false);
@@ -45,7 +46,7 @@ const UserContextProvider = (props) => {
 
   const handleTokenRefresh = async (data) => {
     // Check if the token needs to be refreshed immediately
-    // if not, schedule a token refresh
+    // If not, schedule a token refresh
     const now = Date.now();
     // Get the time difference since now and the last token update
     let timeElapsed = now - data.timestamp;
@@ -74,9 +75,8 @@ const UserContextProvider = (props) => {
    * The endpoint should check if the user already exists
    * If it doesn't exist, create one
    * Sync spotify data
-   * Put data in the databse
+   * Put username in the databse
    */
-
   const createSyncUser = async ({ id, access_token }) => {
     //console.log("create user", id);
     try {
@@ -120,7 +120,7 @@ const UserContextProvider = (props) => {
 
         await Promise.all([handleTokenRefresh(data), createSyncUser(data)]);
       } else {
-        // User is not logged in, go to the landing page
+        // User is not logged in; go to the landing page
         history.push("/");
       }
 
@@ -140,13 +140,12 @@ const UserContextProvider = (props) => {
     /**
      * If we have user data passed via an argument then use it
      * Otherwise, fallback to the user object from the state
-     * We need to do it this way, because of stale data due to useEffect closure
+     * We need to do it this way because of stale data due to
+     * useEffect closure
      */
     const userData = data || user;
     const { refresh_token } = userData;
     // Refresh the token
-    // TODO - need error here?
-    //const { response, error } = await withAsync(() =>
     const { response } = await withAsync(() =>
       fetch(
         `${process.env.REACT_APP_BASE_URL}/refresh_token?refresh_token=${refresh_token}`
