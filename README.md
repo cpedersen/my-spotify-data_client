@@ -17,7 +17,7 @@ https://my-spotify-data-client.vercel.app
 
 The landing page gives you an overview of the application and allows you to log in using either your own Spotify credentials or a test user's credentials. A link to About help is provided for additional information about the app.
 
-![Alt text](./src/images/LandingPage.jpg?raw=true "LandingPage" {height=350 width=250px})
+![Alt text](./src/images/LandingPage.jpg?raw=true "LandingPage" width="250)
 
 ## Search My Playlists Screen
 
