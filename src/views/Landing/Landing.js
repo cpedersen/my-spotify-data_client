@@ -34,8 +34,7 @@ function Landing(props) {
           <section className={styles.loginBlock}>
             <p className={styles.paragraph}>
               Try it out! When you enter your Spotify user credentials, you are
-              redirected to Spotify's official login. Your password is not saved
-              to the My Spotify Data database.
+              redirected to Spotify's official login.
             </p>
             <p className={styles.paragraph}>
               Click the button below to get started...
